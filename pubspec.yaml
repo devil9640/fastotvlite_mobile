@@ -17,11 +17,11 @@ dependencies:
       ref: master
   video_player:
     git:
-      url: https://github.com/fastogt/video_player.git
+      url: https://gitlab.com/fastogt/video_player.git
       ref: master
   fastotv_common:
     git:
-      url: https://github.com/fastogt/flutter_common.git
+      url: https://gitlab.com/fastogt/flutter_common.git
       ref: master
   fastotv_device_info:
     git:
