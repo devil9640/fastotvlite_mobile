@@ -1,0 +1,3 @@
+const CARD_WIDTH = 128.0;
+const CARD_EDGE_INSETS = 8.0;
+const BORDER_WIDTH = 2.0;

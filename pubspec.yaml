@@ -1,0 +1,76 @@
+name: fastotvlite
+author: Alexandr Topilski <support@fastogt.com>
+description: FastoTV Lite IPTV player.
+homepage: https://fastotv.com
+version: 1.12.0+14
+
+
+module:
+  androidX: true
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fastotv_dart:
+    git:
+      url: https://github.com/fastogt/fastotv_dart.git
+      ref: master
+  video_player:
+    git:
+      url: https://github.com/fastogt/video_player.git
+      ref: master
+  fastotv_common:
+    git:
+      url: https://github.com/fastogt/flutter_common.git
+      ref: master
+  fastotv_device_info:
+    git:
+      url: https://github.com/fastogt/fastotv_device_info.git
+      ref: master
+  cupertino_icons: ^0.1.3
+  flutter_speed_dial: ^1.2.5
+  unicorndial: ^1.1.5
+  shared_preferences: ^0.5.6+2
+  volume:
+    git:
+      url: https://github.com/fastogt/Volume_Flutter.git
+      ref: master
+  screen: ^0.0.5
+  numberpicker: ^1.1.0
+  file_picker: ^1.4.3+2
+  package_info: ^0.4.0+14
+  persist_theme:
+    git:
+      url: git://github.com/fastogt/plugins.git
+      ref: master
+      path: packages/persist_theme
+  device_info: ^0.4.1+5
+  dart_chromecast: ^0.1.2
+  event_bus: ^1.1.1
+  get_it: ^3.1.0
+  rxdart: ^0.23.1
+  xml: ^3.7.0
+  double_back_to_close_app: ^0.1.2
+  cached_network_image: ^2.0.0
+  flutter_material_color_picker: ^1.0.5
+  flutter_mdns_plugin:
+    git:
+      url: https://github.com/terrabythia/flutter_mdns_plugin.git
+      ref: master
+  observable: any
+  flutter_localizations:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - install/assets/logo.png
+    - install/assets/unknown_channel.png
+    - install/assets/unknown_preview.png
+    - install/lang/en.json
+    - install/lang/ru.json
+    - install/lang/fr.json
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: install/assets/Nunito.ttf
