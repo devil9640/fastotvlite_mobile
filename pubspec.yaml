@@ -31,33 +31,17 @@ dependencies:
   flutter_speed_dial: ^1.2.5
   unicorndial: ^1.1.5
   shared_preferences: ^0.5.6+2
-  volume:
-    git:
-      url: https://github.com/fastogt/Volume_Flutter.git
-      ref: master
-  screen: ^0.0.5
-  numberpicker: ^1.1.0
   file_picker: ^1.4.3+2
-  package_info: ^0.4.0+14
   persist_theme:
     git:
       url: git://github.com/fastogt/plugins.git
       ref: master
       path: packages/persist_theme
-  device_info: ^0.4.1+5
-  dart_chromecast: ^0.1.2
   event_bus: ^1.1.1
+  numberpicker: ^1.1.0
   get_it: ^3.1.0
   rxdart: ^0.23.1
-  xml: ^3.7.0
   double_back_to_close_app: ^0.1.2
-  cached_network_image: ^2.0.0
-  flutter_material_color_picker: ^1.0.5
-  flutter_mdns_plugin:
-    git:
-      url: https://github.com/terrabythia/flutter_mdns_plugin.git
-      ref: master
-  observable: any
   flutter_localizations:
     sdk: flutter
 

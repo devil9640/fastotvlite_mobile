@@ -24,6 +24,7 @@ class _PaddingSettingsState extends State<PaddingSettings> {
   double percent;
   TextStyle textStyle = TextStyle(fontSize: 32);
   TextStyle symbolsStyle;
+
   @override
   void initState() {
     super.initState();
@@ -33,22 +34,14 @@ class _PaddingSettingsState extends State<PaddingSettings> {
 
   @override
   Widget build(BuildContext context) {
-    symbolsStyle = TextStyle(
-        fontSize: 32, color: borderColor(widget.focus.hasPrimaryFocus));
+    symbolsStyle = TextStyle(fontSize: 32, color: borderColor(widget.focus.hasPrimaryFocus));
     return Focus(
         focusNode: widget.focus,
         onKey: _listControl,
         child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('+', style: symbolsStyle)),
-          Container(
-              child: Center(
-                  child: Text((percent * 100).toStringAsFixed(1) + '%',
-                      style: textStyle))),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('-', style: symbolsStyle))
+          Padding(padding: const EdgeInsets.all(8.0), child: Text('+', style: symbolsStyle)),
+          Container(child: Center(child: Text((percent * 100).toStringAsFixed(1) + '%', style: textStyle))),
+          Padding(padding: const EdgeInsets.all(8.0), child: Text('-', style: symbolsStyle))
         ]));
   }
 
@@ -59,13 +52,13 @@ class _PaddingSettingsState extends State<PaddingSettings> {
       switch (rawKeyEventDataAndroid.keyCode) {
         case KEY_DOWN:
           if (percent > 0.9) {
-            percent-=0.001;
+            percent -= 0.001;
             widget.controller.add(percent);
           }
           break;
         case KEY_UP:
           if (percent < 1) {
-            percent+=0.001;
+            percent += 0.001;
             widget.controller.add(percent);
           }
           break;

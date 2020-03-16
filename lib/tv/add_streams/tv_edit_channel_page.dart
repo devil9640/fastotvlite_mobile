@@ -30,9 +30,13 @@ abstract class EditStreamPageTV<T extends StatefulWidget> extends State<T> {
   bool validator = true;
 
   void onSave();
+
   String appBarTitle();
+
   Widget editingPage();
+
   IStream stream();
+
   void enterAction(FocusNode node);
 
   @override
@@ -58,8 +62,7 @@ abstract class EditStreamPageTV<T extends StatefulWidget> extends State<T> {
                 elevation: 0,
                 iconTheme: IconThemeData(color: appBarTextColor),
                 centerTitle: true,
-                title: Text(AppLocalizations.toUtf8(appBarTitle()),
-                    style: TextStyle(color: appBarTextColor)),
+                title: Text(AppLocalizations.toUtf8(appBarTitle()), style: TextStyle(color: appBarTextColor)),
                 leading: backButton(),
                 actions: <Widget>[saveButton(), deleteButton()]),
             backgroundColor: primaryColor,
@@ -84,33 +87,25 @@ abstract class EditStreamPageTV<T extends StatefulWidget> extends State<T> {
   }
 
   Widget backButton() {
-    return Focus(
-        focusNode: backButtonNode,
-        onKey: nodeAction,
-        child: _icon(Icons.arrow_back, backButtonNode));
+    return Focus(focusNode: backButtonNode, onKey: nodeAction, child: _icon(Icons.arrow_back, backButtonNode));
   }
 
   Widget saveButton() {
     return Focus(
         focusNode: saveButtonNode,
         onKey: nodeAction,
-        child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: _icon(Icons.save, saveButtonNode)));
+        child: Padding(padding: EdgeInsets.all(16.0), child: _icon(Icons.save, saveButtonNode)));
   }
 
   Widget deleteButton() {
     return Focus(
         focusNode: saveButtonNode,
         onKey: nodeAction,
-        child: IconButton(
-            icon: _icon(Icons.delete, deleteButtonNode),
-            onPressed: () => exitAndDelete()));
+        child: IconButton(icon: _icon(Icons.delete, deleteButtonNode), onPressed: () => exitAndDelete()));
   }
 
   Widget _icon(IconData icon, FocusNode node) {
-    return Icon(icon,
-        color: node.hasPrimaryFocus ? CustomColor().tvSelectedColor() : null);
+    return Icon(icon, color: node.hasPrimaryFocus ? CustomColor().tvSelectedColor() : null);
   }
 
   bool nodeAction(FocusNode node, RawKeyEvent event) {

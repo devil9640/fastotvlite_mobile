@@ -37,7 +37,7 @@ class _FilePickerDialogTVState extends BaseFilePickerDialogState {
         onFieldChanged: () {},
         onFieldSubmit: () => _onEnter(_textFieldNode.text));
   }
-  
+
   bool _nodeAction(FocusNode node, RawKeyEvent event) {
     if (event is RawKeyDownEvent && event.data is RawKeyEventDataAndroid) {
       RawKeyDownEvent rawKeyDownEvent = event;

@@ -32,7 +32,8 @@ class _AgeSettingsTileState extends State<AgeSettingsTile> {
         title: Text(AppLocalizations.of(context).translate(TR_PARENTAL_CONTROL)),
         subtitle: Text(AppLocalizations.of(context).translate(TR_AGE_RESTRICTION)),
         onTap: () => _onTap(),
-        trailing: Padding(padding: const EdgeInsets.all(8.0), child: Text('$ageRating', style: TextStyle(fontSize: 16))));
+        trailing:
+            Padding(padding: const EdgeInsets.all(8.0), child: Text('$ageRating', style: TextStyle(fontSize: 16))));
   }
 
   void _onTap() async {

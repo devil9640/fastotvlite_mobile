@@ -35,7 +35,10 @@ class _AboutPageState extends State<AboutPage> {
     }
     _snackBarShown = true;
     Clipboard.setData(new ClipboardData(text: toCopy));
-    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(whatCopied + ' ' + _translate(TR_COPIED)))).closed.then((_) {
+    _scaffoldKey.currentState
+        .showSnackBar(SnackBar(content: Text(whatCopied + ' ' + _translate(TR_COPIED))))
+        .closed
+        .then((_) {
       _snackBarShown = false;
     });
   }
@@ -76,7 +79,8 @@ class _AboutPageState extends State<AboutPage> {
             key: _scaffoldKey,
             appBar: AppBar(
                 iconTheme: IconThemeData(color: CustomColor().primaryColorBrightness(model)),
-                title: Text(_translate(TR_ABOUT), style: TextStyle(color: CustomColor().primaryColorBrightness(model)))),
+                title:
+                    Text(_translate(TR_ABOUT), style: TextStyle(color: CustomColor().primaryColorBrightness(model)))),
             body: Column(children: <Widget>[
               ListHeader(text: _translate(TR_ACCOUNT)),
               login(),

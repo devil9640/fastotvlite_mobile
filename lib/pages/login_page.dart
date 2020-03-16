@@ -35,7 +35,7 @@ class _LoginPageBufferState extends State<LoginPageBuffer> {
       final savedLocale = Locale(settings.langCode(), settings.countryCode());
       WidgetsBinding.instance.addPostFrameCallback((_) => AppLocalizations.of(context).load(savedLocale));
     }
-    
+
     final device = locator<RuntimeDevice>();
     _hasTouch = device.hasTouch;
   }

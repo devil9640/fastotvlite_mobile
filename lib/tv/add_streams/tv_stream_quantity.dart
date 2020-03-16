@@ -22,18 +22,18 @@ class _StreamTypePickerTVState extends State<StreamTypePickerTV> {
         titlePadding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
         contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
         actions: <Widget>[
-          _button('CANCEL', () =>_exit(), 1.0),
+          _button('CANCEL', () => _exit(), 1.0),
           _button('OK', () => _onProceed(), _source == null ? 0.5 : 1.0)
         ],
-        content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          _typeTile(PickStreamFrom.PLAYLIST),
-          _typeTile(PickStreamFrom.SINGLE_STREAM)
-        ]));
+        content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[_typeTile(PickStreamFrom.PLAYLIST), _typeTile(PickStreamFrom.SINGLE_STREAM)]));
   }
 
   Widget _typeTile(PickStreamFrom value) {
     return ListTile(
-        title: Text(AppLocalizations.of(context).translate(value == PickStreamFrom.SINGLE_STREAM ? TR_SINGLE_STREAM : TR_PLAYLIST)),
+        title: Text(AppLocalizations.of(context)
+            .translate(value == PickStreamFrom.SINGLE_STREAM ? TR_SINGLE_STREAM : TR_PLAYLIST)),
         leading: Radio(
             autofocus: true,
             activeColor: CustomColor().tvSelectedColor(),

@@ -17,7 +17,7 @@ class EpgSettingsTile extends StatefulWidget {
 
 class _EpgSettingsTileState extends State<EpgSettingsTile> {
   String _epgUrl = '';
-  
+
   @override
   void initState() {
     super.initState();
@@ -135,25 +135,23 @@ class _EpgDialogState extends State<EpgDialog> {
 
   Widget _content() {
     return SingleChildScrollView(
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-          listTile('FastoTV', 0),
-          listTile(_translate(TR_EPG_CUSTOM), 1),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: TextFormField(
-                  focusNode: textFieldFocus,
-                  controller: _textEditingController,
-                  onChanged: (String text) => _validate(),
-                  onFieldSubmitted: (String text) => _validate(),
-                  decoration: InputDecoration(
-                      fillColor: Theme.of(context).accentColor,
-                      focusColor: Theme.of(context).accentColor,
-                      labelText: _translate(TR_EPG_URL),
-                      errorText: _errorText())))
-        ]));
+        child:
+            Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
+      listTile('FastoTV', 0),
+      listTile(_translate(TR_EPG_CUSTOM), 1),
+      Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: TextFormField(
+              focusNode: textFieldFocus,
+              controller: _textEditingController,
+              onChanged: (String text) => _validate(),
+              onFieldSubmitted: (String text) => _validate(),
+              decoration: InputDecoration(
+                  fillColor: Theme.of(context).accentColor,
+                  focusColor: Theme.of(context).accentColor,
+                  labelText: _translate(TR_EPG_URL),
+                  errorText: _errorText())))
+    ]));
   }
 
   @override

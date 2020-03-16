@@ -28,6 +28,7 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
   double scale;
 
   String m3uText() => widget.m3uText;
+
   StreamType type() => widget.type;
 
   @override
@@ -69,10 +70,7 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
                     leading: _backButton(),
                     actions: <Widget>[_saveButton()],
                     elevation: 0,
-                    title: Text('Add',
-                        style: TextStyle(
-                            color: CustomColor()
-                                .backGroundColorBrightness(primaryColor))),
+                    title: Text('Add', style: TextStyle(color: CustomColor().backGroundColorBrightness(primaryColor))),
                     centerTitle: true),
                 backgroundColor: primaryColor,
                 body: _body())));
@@ -99,10 +97,7 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
         focusNode: _saveButtonNode,
         onKey: _onAppBar,
         child: IconButton(
-            icon: Icon(Icons.save),
-            iconSize: 32,
-            color: _buttonColor(_saveButtonNode),
-            onPressed: () => onSave()));
+            icon: Icon(Icons.save), iconSize: 32, color: _buttonColor(_saveButtonNode), onPressed: () => onSave()));
   }
 
   bool _onAppBar(FocusNode node, RawKeyEvent event) {
@@ -153,8 +148,7 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
                   return Focus(
                       focusNode: node,
                       onKey: _onTile,
-                      child: LiveSelectTile(channel, checkValues[index],
-                          () => onCheckBox(index)));
+                      child: LiveSelectTile(channel, checkValues[index], () => onCheckBox(index)));
                 })));
   }
 
@@ -203,12 +197,9 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
               focusNode: node,
               child: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(
-                          color:
-                              node.hasFocus ? Colors.amber : Colors.transparent,
-                          width: BORDER_WIDTH)),
-                  child: VodSelectCard(vods[index], checkValues[index],
-                      () => onCheckBox(index))));
+                      border:
+                          Border.all(color: node.hasFocus ? Colors.amber : Colors.transparent, width: BORDER_WIDTH)),
+                  child: VodSelectCard(vods[index], checkValues[index], () => onCheckBox(index))));
         }));
   }
 
@@ -228,18 +219,14 @@ class _SelectStreamTVState extends BaseSelectStreamPage<SelectStreamTV> {
             _channelsScope.focusInDirection(TraversalDirection.left);
           } else {
             _channelsScope.focusInDirection(TraversalDirection.up);
-            while (MediaQuery.of(context).size.width -
-                    _channelsScope.focusedChild.offset.dx >
-                CARD_WIDTH * 2) {
+            while (MediaQuery.of(context).size.width - _channelsScope.focusedChild.offset.dx > CARD_WIDTH * 2) {
               _channelsScope.focusInDirection(TraversalDirection.right);
             }
           }
           break;
 
         case KEY_RIGHT:
-          if (MediaQuery.of(context).size.width -
-                  _channelsScope.focusedChild.offset.dx >
-              CARD_WIDTH * 2) {
+          if (MediaQuery.of(context).size.width - _channelsScope.focusedChild.offset.dx > CARD_WIDTH * 2) {
             _channelsScope.focusInDirection(TraversalDirection.right);
           } else {
             while (_channelsScope.focusedChild.offset.dx > CARD_WIDTH) {

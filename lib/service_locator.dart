@@ -13,7 +13,7 @@ GetIt locator = GetIt.instance;
 Future setupLocator() async {
   var device = await RuntimeDevice.getInstance();
   locator.registerSingleton<RuntimeDevice>(device);
-  
+
   var clientEvents = await StreamListEvent.getInstance();
   locator.registerSingleton<StreamListEvent>(clientEvents);
 

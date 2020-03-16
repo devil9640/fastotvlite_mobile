@@ -8,11 +8,13 @@ import 'package:fastotvlite/tv/add_streams/tv_edit_channel_page.dart';
 
 abstract class AbstractLiveEditPage extends StatefulWidget {
   final LiveStream stream;
+
   AbstractLiveEditPage(this.stream);
 }
 
 abstract class AbstractLiveEditPageState extends EditStreamPageTV<AbstractLiveEditPage> {
   String appBarTitle() => 'Edit channel';
+
   LiveStream stream() => widget.stream;
 
   @override
@@ -32,21 +34,19 @@ abstract class AbstractLiveEditPageState extends EditStreamPageTV<AbstractLiveEd
   Widget editingPage() {
     final size = MediaQuery.of(context).size;
     return Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            PreviewIcon.live(iconController.text),
-            SizedBox(width: 16),
-            Container(
-                width: size.width / 2,
-                child: SingleChildScrollView(
-                    child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-                  textField('Title', nameFieldNode, nameController),
-                  textField('Group', groupFieldNode, groupController),
-                  textField('Video link', urlFieldNode, videoLinkController),
-                  textField('Icon', iconFieldNode, iconController),
-                  textField('IARC', iarcFieldNode, iarcController)
-                ])))
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+      PreviewIcon.live(iconController.text),
+      SizedBox(width: 16),
+      Container(
+          width: size.width / 2,
+          child: SingleChildScrollView(
+              child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            textField('Title', nameFieldNode, nameController),
+            textField('Group', groupFieldNode, groupController),
+            textField('Video link', urlFieldNode, videoLinkController),
+            textField('Icon', iconFieldNode, iconController),
+            textField('IARC', iarcFieldNode, iarcController)
+          ])))
     ]));
   }
 
@@ -79,6 +79,7 @@ abstract class AbstractLiveEditPageState extends EditStreamPageTV<AbstractLiveEd
 
 class LiveAddPageTV extends AbstractLiveEditPage {
   LiveAddPageTV(stream) : super(stream);
+
   @override
   _LiveAddPageTVState createState() => _LiveAddPageTVState();
 }
@@ -90,6 +91,7 @@ class _LiveAddPageTVState extends AbstractLiveEditPageState {
 
 class LiveEditPageTV extends AbstractLiveEditPage {
   LiveEditPageTV(stream) : super(stream);
+
   @override
   _LiveEditPageTVState createState() => _LiveEditPageTVState();
 }

@@ -27,7 +27,7 @@ class TextFieldNode {
 
   TextFieldNode({this.main, this.text});
 
-  void dispose(){
+  void dispose() {
     main?.dispose();
     text?.dispose();
   }

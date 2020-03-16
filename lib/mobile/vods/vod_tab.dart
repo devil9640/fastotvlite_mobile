@@ -31,37 +31,38 @@ class VodVideoAppState extends VideoAppState<VodStream> {
   Widget tile(int, List<VodStream> channels) {
     var channel = channels[int];
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: EDGE_INSETS, vertical: EDGE_INSETS * 1.5),
-      child: Stack(children: <Widget>[
-        VodCard(
-            iconLink: channel.icon(),
-            duration: channel.duration(),
-            interruptTime: channel.interruptTime(),
-            width: CARD_WIDTH,
-            onPressed: () => toDescription(channel)),
-        VodFavoriteButton(
-            width: 72,
-            height: 36,
-            child: Row(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              Container(
-                  width: 36,
-                  child: FavoriteStarButton(channel.favorite(),
-                      onFavoriteChanged: (bool value) => handleFavorite(value, channel))),
-              Container(
-                  width: 36,
-                  child: IconButton(
-                      padding: EdgeInsets.all(0.0),
-                      icon: Icon(Icons.settings),
-                      onPressed: () async {
-                        VodStream response = await Navigator.of(context).push(MaterialPageRoute(builder: (context) => VodEditPage(channel)));
-                        if (response == null) {
-                          widget.channels.remove(channel);
-                        }
-                        handleStreamEdit();
-                      }))
-            ]))
-      ])
-    );
+        padding: const EdgeInsets.symmetric(horizontal: EDGE_INSETS, vertical: EDGE_INSETS * 1.5),
+        child: Stack(children: <Widget>[
+          VodCard(
+              iconLink: channel.icon(),
+              duration: channel.duration(),
+              interruptTime: channel.interruptTime(),
+              width: CARD_WIDTH,
+              onPressed: () => toDescription(channel)),
+          VodFavoriteButton(
+              width: 72,
+              height: 36,
+              child:
+                  Row(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                Container(
+                    width: 36,
+                    child: FavoriteStarButton(channel.favorite(),
+                        onFavoriteChanged: (bool value) => handleFavorite(value, channel))),
+                Container(
+                    width: 36,
+                    child: IconButton(
+                        padding: EdgeInsets.all(0.0),
+                        icon: Icon(Icons.settings),
+                        onPressed: () async {
+                          VodStream response = await Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => VodEditPage(channel)));
+                          if (response == null) {
+                            widget.channels.remove(channel);
+                          }
+                          handleStreamEdit();
+                        }))
+              ]))
+        ]));
   }
 
   Widget listBuilder(List<VodStream> channels) {

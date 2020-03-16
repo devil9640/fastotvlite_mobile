@@ -76,7 +76,8 @@ class _AgePickerTVState extends State<AgePickerTV> {
   Widget ageWidget() {
     return ListTile(
         leading: Icon(Icons.child_care, color: CustomColor().themeBrightnessColor(context)),
-        title: Text(AppLocalizations.of(context).translate(TR_AGE_RESTRICTION), softWrap: true, style: TextStyle(fontSize: 20)));
+        title: Text(AppLocalizations.of(context).translate(TR_AGE_RESTRICTION),
+            softWrap: true, style: TextStyle(fontSize: 20)));
   }
 
   @override
@@ -254,6 +255,6 @@ class _AgePickerPasswordState extends State<AgePickerPassword> {
     }
     return node.hasPrimaryFocus;
   }
-  
+
   String _translate(String key) => AppLocalizations.of(context).translate(key);
 }

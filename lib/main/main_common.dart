@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final app = Consumer<ThemeModel>(builder: (context, model, child) {
       return Shortcuts(
-        shortcuts: {LogicalKeySet(LogicalKeyboardKey.select): const Intent(ActivateAction.key)},
-          child:  MaterialApp(
+          shortcuts: {LogicalKeySet(LogicalKeyboardKey.select): const Intent(ActivateAction.key)},
+          child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: model.theme,
             supportedLocales: SUPPORTED_LOCALES,

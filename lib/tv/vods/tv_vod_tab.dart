@@ -76,9 +76,9 @@ class _TVVodPageState extends State<TVVodPage> with TickerProviderStateMixin {
     bool isActive(int index) {
       return _tabController.index == index;
     }
-          
+
     String _title(String title) {
-      if (title ==  TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
+      if (title == TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
         return AppLocalizations.of(context).translate(title);
       }
       return AppLocalizations.toUtf8(title);
@@ -87,7 +87,8 @@ class _TVVodPageState extends State<TVVodPage> with TickerProviderStateMixin {
     List<Widget> tabsGenerator() {
       return List.generate(channelsMap.keys.length, (int index) {
         return Tab(
-            child: Container(child: Text(_title(channelsMap.keys.toList()[index]), style: isActive(index) ? active : inactive)));
+            child: Container(
+                child: Text(_title(channelsMap.keys.toList()[index]), style: isActive(index) ? active : inactive)));
       });
     }
 
@@ -137,9 +138,8 @@ class _TVVodPageState extends State<TVVodPage> with TickerProviderStateMixin {
                 itemBuilder: (BuildContext context, int index) {
                   final node = _list[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: EDGE_INSETS, vertical: EDGE_INSETS * 1.5),
-                    child: Center(child: _CardWrap(node, _onCard, CARD_WIDTH, BORDER_WIDTH))
-                  );
+                      padding: const EdgeInsets.symmetric(horizontal: EDGE_INSETS, vertical: EDGE_INSETS * 1.5),
+                      child: Center(child: _CardWrap(node, _onCard, CARD_WIDTH, BORDER_WIDTH)));
                 })));
   }
 
@@ -164,34 +164,34 @@ class _TVVodPageState extends State<TVVodPage> with TickerProviderStateMixin {
           break;
 
         case KEY_LEFT:
-            if (FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH) {
-              FocusScope.of(context).focusInDirection(TraversalDirection.left);
-            } else {
-              FocusScope.of(context).focusInDirection(TraversalDirection.up);
-              while (MediaQuery.of(context).size.width - FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH * 2) {
-                FocusScope.of(context).focusInDirection(TraversalDirection.right);
-              }
-            }
-            break;
-            
-        case KEY_RIGHT:
-            if (MediaQuery.of(context).size.width - FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH * 2) {
+          if (FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH) {
+            FocusScope.of(context).focusInDirection(TraversalDirection.left);
+          } else {
+            FocusScope.of(context).focusInDirection(TraversalDirection.up);
+            while (MediaQuery.of(context).size.width - FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH * 2) {
               FocusScope.of(context).focusInDirection(TraversalDirection.right);
-            } else {
-              while (FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH) {
-                FocusScope.of(context).focusInDirection(TraversalDirection.left);
-              }
-              FocusScope.of(context).focusInDirection(TraversalDirection.down);
             }
-            break;
-            
+          }
+          break;
+
+        case KEY_RIGHT:
+          if (MediaQuery.of(context).size.width - FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH * 2) {
+            FocusScope.of(context).focusInDirection(TraversalDirection.right);
+          } else {
+            while (FocusScope.of(context).focusedChild.offset.dx > CARD_WIDTH) {
+              FocusScope.of(context).focusInDirection(TraversalDirection.left);
+            }
+            FocusScope.of(context).focusInDirection(TraversalDirection.down);
+          }
+          break;
+
         case KEY_UP:
-          	FocusScope.of(context).focusInDirection(TraversalDirection.up);
-            break;
+          FocusScope.of(context).focusInDirection(TraversalDirection.up);
+          break;
 
         case KEY_DOWN:
-            FocusScope.of(context).focusInDirection(TraversalDirection.down);
-            break;
+          FocusScope.of(context).focusInDirection(TraversalDirection.down);
+          break;
 
         default:
           break;
@@ -211,6 +211,7 @@ class _TVVodPageState extends State<TVVodPage> with TickerProviderStateMixin {
     void deleteFavorite(VodStream channel) {
       channelsMap[TR_FAVORITE].remove(channel);
     }
+
     channel.favorite() ? addFavorite(channel) : deleteFavorite(channel);
   }
 
@@ -236,7 +237,6 @@ class _CardWrap extends StatefulWidget {
 }
 
 class _CardWrapState extends State<_CardWrap> {
-
   FocusNode _node = FocusNode();
 
   @override
@@ -258,9 +258,8 @@ class _CardWrapState extends State<_CardWrap> {
         onKey: (node, event) => widget.onKey(event, widget.channel),
         child: Container(
             decoration: BoxDecoration(
-                border: Border.all(
-                    color: _node.hasFocus ? Colors.amber : Colors.transparent,
-                    width: widget.borderWidth)),
+                border:
+                    Border.all(color: _node.hasFocus ? Colors.amber : Colors.transparent, width: widget.borderWidth)),
             child: Stack(children: <Widget>[
               VodCard(
                   iconLink: widget.channel.icon(),
@@ -268,9 +267,10 @@ class _CardWrapState extends State<_CardWrap> {
                   interruptTime: widget.channel.interruptTime(),
                   width: widget.cardWidth),
               VodFavoriteButton(
-                  child: Icon(
-                      widget.channel.favorite() ? Icons.star : Icons.star_border,
-                      color: widget.channel.favorite() ? CustomColor().tvSelectedColor() : CustomColor().tvUnselectedColor()))
+                  child: Icon(widget.channel.favorite() ? Icons.star : Icons.star_border,
+                      color: widget.channel.favorite()
+                          ? CustomColor().tvSelectedColor()
+                          : CustomColor().tvUnselectedColor()))
             ])));
   }
 

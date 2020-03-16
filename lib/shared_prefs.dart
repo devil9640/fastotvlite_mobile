@@ -35,7 +35,7 @@ class LocalStorageService {
   static const String _epgLinkKey = 'epg';
 
   static const String _screenScaleKey = 'content_padding';
-  
+
   static const String _langCodeKey = 'lang_code';
   static const String _countryCodeKey = 'country_code';
 
@@ -46,7 +46,7 @@ class LocalStorageService {
   void setLangCode(String code) {
     _preferences.setString(_langCodeKey, code);
   }
-  
+
   String countryCode() {
     return _preferences.getString(_countryCodeKey);
   }

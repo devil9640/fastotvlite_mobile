@@ -14,6 +14,7 @@ class AddStreamResponse {
   StreamType type;
   List<LiveStream> channels = [];
   List<VodStream> vods = [];
+
   AddStreamResponse(this.type, {this.channels, this.vods});
 }
 
@@ -38,7 +39,7 @@ class M3UParser {
   // public
   Future<AddStreamResponse> parseChannelsFromString() async {
     final streams = _splitChannelInfo(file);
-    if(streams == null){
+    if (streams == null) {
       return null;
     }
     if (type == StreamType.Live) {
@@ -58,7 +59,8 @@ class M3UParser {
   }
 
   VodStream _createVodStream(Map<String, dynamic> m3u) {
-    final _movieInfo = MovieInfo([m3u[PRIMARY_URL_FIELD]], '', m3u[NAME_FIELD], m3u[ICON_FIELD], '', 0.0, 0, '', 0, MovieType.VODS);
+    final _movieInfo =
+        MovieInfo([m3u[PRIMARY_URL_FIELD]], '', m3u[NAME_FIELD], m3u[ICON_FIELD], '', 0.0, 0, '', 0, MovieType.VODS);
     final vodInfo = VodInfo(m3u[ID_FIELD], m3u[GROUP_FIELD], 21, false, 0, 0, _movieInfo, true, true, null);
 
     return VodStream(vodInfo);
@@ -148,5 +150,6 @@ class _TagsM3U {
   String name;
   String icon;
   String group;
+
   _TagsM3U({this.group, this.icon, this.id, this.name});
 }

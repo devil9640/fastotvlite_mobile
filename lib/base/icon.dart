@@ -10,9 +10,6 @@ class CustomIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        icon: Icon(icon),
-        onPressed: () => onTap(),
-        color: CustomColor().themeBrightnessColor(context));
+    return IconButton(icon: Icon(icon), onPressed: () => onTap(), color: CustomColor().themeBrightnessColor(context));
   }
 }

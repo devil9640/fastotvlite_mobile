@@ -22,14 +22,16 @@ abstract class BaseSelectStreamPage<T extends StatefulWidget> extends State<T> {
   bool _hasTouch;
 
   StreamType type();
+
   String m3uText();
+
   Widget layout();
 
   @override
   void initState() {
     super.initState();
     _parseText();
-    
+
     final device = locator<RuntimeDevice>();
     _hasTouch = device.hasTouch;
   }
@@ -66,9 +68,7 @@ abstract class BaseSelectStreamPage<T extends StatefulWidget> extends State<T> {
     final current = selectedList();
     for (int i = 0; i < current.length; i++) {
       if (checkValues[i]) {
-        type() == StreamType.Live
-            ? outputLive.add(current[i])
-            : outputVods.add(current[i]);
+        type() == StreamType.Live ? outputLive.add(current[i]) : outputVods.add(current[i]);
       }
     }
     Navigator.of(context).pop(AddStreamResponse(type(), channels: outputLive, vods: outputVods));
@@ -96,9 +96,7 @@ class LiveSelectTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final device = locator<RuntimeDevice>();
-    final accentColor = device.hasTouch
-        ? Theme.of(context).accentColor
-        : CustomColor().tvSelectedColor();
+    final accentColor = device.hasTouch ? Theme.of(context).accentColor : CustomColor().tvSelectedColor();
     final textColor = CustomColor().backGroundColorBrightness(accentColor);
     return CheckboxListTile(
         activeColor: accentColor,
@@ -130,10 +128,7 @@ class VodSelectCard extends StatelessWidget {
           onPressed: () {}),
       VodFavoriteButton(
           child: Checkbox(
-              activeColor: accentColor,
-              checkColor: textColor,
-              value: value,
-              onChanged: (value) => onCheckBox()))
+              activeColor: accentColor, checkColor: textColor, value: value, onChanged: (value) => onCheckBox()))
     ]);
   }
 }

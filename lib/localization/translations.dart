@@ -13,13 +13,13 @@ const String TR_NO_PROGRAMS = "No programs";
 const String TR_FAVORITE = "Favorite";
 const String TR_RECENT = "Recent";
 const String TR_ALL = "All";
-const String TR_FAVORITE_LIVE =  "No favorite channel";
-const String TR_RECENT_LIVE =  "No recent channel";
+const String TR_FAVORITE_LIVE = "No favorite channel";
+const String TR_RECENT_LIVE = "No recent channel";
 const String TR_CATCHUPS = 'Catchups';
 const String TR_CATCHUP = 'Catchup';
 const String TR_VODS = 'VODs';
-const String TR_FAVORITE_VOD =  "No favorite movies";
-const String TR_RECENT_VOD =  "No recent movies";
+const String TR_FAVORITE_VOD = "No favorite movies";
+const String TR_RECENT_VOD = "No recent movies";
 const String TR_SERIES = 'Series';
 const String TR_PRIVATE_TV = 'PrivateTV';
 const String TR_SETTINGS = 'Settings';
@@ -31,13 +31,13 @@ const String TR_LAST_VIEWED = "Last viewed";
 const String TR_LAST_VIEWED_SUB = "Open last channel";
 
 const String TR_SOUND_CONTROL = "Sound control";
-const String TR_BRIGHTNESS_CONTROL =  "Brightness control";
-const String TR_RELATIVE =  "Relative";
+const String TR_BRIGHTNESS_CONTROL = "Brightness control";
+const String TR_RELATIVE = "Relative";
 const String TR_ABSOLUTE = "Absolute";
 
-const String TR_CONTENT_SETTINGS =  "Content settings";
-const String TR_PARENTAL_CONTROL =  "Parental control";
-const String TR_AGE_RESTRICTION =  "Age restriction";
+const String TR_CONTENT_SETTINGS = "Content settings";
+const String TR_PARENTAL_CONTROL = "Parental control";
+const String TR_AGE_RESTRICTION = "Age restriction";
 const String TR_AGE_RESTRICTION_PASSWORD = "Age restriction password";
 
 const String TR_THEME = "Theme";
@@ -50,13 +50,13 @@ const String TR_COLORED_DARK = "Colored dark";
 const String TR_BLACK = "Black";
 const String TR_COLOR_PICKER = "Color picker";
 const String TR_PRIMARY_COLOR = "Primary color";
-const String TR_ACCENT_COLOR= "Accent color";
+const String TR_ACCENT_COLOR = "Accent color";
 
 const String TR_LOCALIZATION = "Localization";
 const String TR_LANGUAGE = 'Language';
 const String TR_LANGUAGE_CHOOSE = 'Choose Language';
 const String TR_LANGUAGE_NAME = 'Language name';
-  
+
 const String TR_EXPIRATION_DATE = "Expiration date";
 const String TR_APP = "App";
 const String TR_ACCOUNT = "Account";

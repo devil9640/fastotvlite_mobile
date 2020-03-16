@@ -39,7 +39,9 @@ class _SettingsPageState extends State<SettingsPage> {
     final primaryColor = Theme.of(context).primaryColor;
     final color = CustomColor().backGroundColorBrightness(primaryColor);
     return Scaffold(
-        appBar: AppBar(iconTheme: IconThemeData(color: color), title: Text(_translate(TR_SETTINGS), style: TextStyle(color: color))),
+        appBar: AppBar(
+            iconTheme: IconThemeData(color: color),
+            title: Text(_translate(TR_SETTINGS), style: TextStyle(color: color))),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           ListHeader(text: _translate(TR_PLAYER)),
@@ -53,22 +55,22 @@ class _SettingsPageState extends State<SettingsPage> {
           divider,
           ListHeader(text: _translate(TR_THEME)),
           MyThemePicker(
-            tileTitle: _translate(TR_GENERAL_THEME),
-            dialogTitle: _translate(TR_CHOOSE_THEME),
-            light: _translate(TR_LIGHT),
-            dark: _translate(TR_DARK),
-            lightColor: _translate(TR_COLORED_LIGHT),
-            darkColor: _translate(TR_COLORED_DARK)),
+              tileTitle: _translate(TR_GENERAL_THEME),
+              dialogTitle: _translate(TR_CHOOSE_THEME),
+              light: _translate(TR_LIGHT),
+              dark: _translate(TR_DARK),
+              lightColor: _translate(TR_COLORED_LIGHT),
+              darkColor: _translate(TR_COLORED_DARK)),
           MyColorPicker.primary(
-            dialogHeader: _translate(TR_COLOR_PICKER),
-            tileTitle: _translate(TR_PRIMARY_COLOR),
-            submit: _translate(TR_SUBMIT),
-            cancel: _translate(TR_CANCEL)),
+              dialogHeader: _translate(TR_COLOR_PICKER),
+              tileTitle: _translate(TR_PRIMARY_COLOR),
+              submit: _translate(TR_SUBMIT),
+              cancel: _translate(TR_CANCEL)),
           MyColorPicker.accent(
-            dialogHeader: _translate(TR_COLOR_PICKER),
-            tileTitle: _translate(TR_ACCENT_COLOR),
-            submit: _translate(TR_SUBMIT),
-            cancel: _translate(TR_CANCEL)),
+              dialogHeader: _translate(TR_COLOR_PICKER),
+              tileTitle: _translate(TR_ACCENT_COLOR),
+              submit: _translate(TR_SUBMIT),
+              cancel: _translate(TR_CANCEL)),
           divider,
           ListHeader(text: _translate(TR_LOCALIZATION)),
           LanguagePicker.settings(() => setState(() {})),
@@ -99,7 +101,7 @@ class _LastViewed extends StatefulWidget {
 
 class _LastViewedState extends State<_LastViewed> {
   bool _saveLastViewed = false;
-  
+
   @override
   void initState() {
     super.initState();
@@ -138,6 +140,7 @@ class _Controls extends StatefulWidget {
   final int type;
 
   _Controls.sound() : type = 0;
+
   _Controls.brightness() : type = 1;
 
   @override

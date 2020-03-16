@@ -3,10 +3,7 @@ import 'package:fastotvlite/app_config.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  var configuredApp = AppConfig(
-    buildType: BuildType.PROD,
-    child: MyApp(),
-  );
+  var configuredApp = AppConfig(buildType: BuildType.PROD, child: MyApp());
 
   await mainCommon();
 

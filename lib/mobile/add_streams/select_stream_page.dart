@@ -19,6 +19,7 @@ class ChannelsPreviewPage extends StatefulWidget {
 
 class _ChannelsPreviewPageState extends BaseSelectStreamPage<ChannelsPreviewPage> {
   StreamType type() => widget.type;
+
   String m3uText() => widget.m3uText;
 
   Widget layout() {
@@ -44,8 +45,7 @@ class _ChannelsPreviewPageState extends BaseSelectStreamPage<ChannelsPreviewPage
     return Scaffold(
         appBar: AppBar(
             iconTheme: IconThemeData(color: appBarTextColor),
-            title: Text('Add channels ' + '($count/${current.length})',
-                style: TextStyle(color: appBarTextColor))),
+            title: Text('Add channels ' + '($count/${current.length})', style: TextStyle(color: appBarTextColor))),
         body: _body(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: _floatingButton());
@@ -56,10 +56,7 @@ class _ChannelsPreviewPageState extends BaseSelectStreamPage<ChannelsPreviewPage
     final textColor = CustomColor().backGroundColorBrightness(accentColor);
     return RaisedButton(
         onPressed: () => onSave(),
-        child: Container(
-            height: 48,
-            child: Center(
-                child: Text('Add selected', style: TextStyle(fontSize: 16)))),
+        child: Container(height: 48, child: Center(child: Text('Add selected', style: TextStyle(fontSize: 16)))),
         color: accentColor,
         textColor: textColor);
   }
@@ -68,8 +65,7 @@ class _ChannelsPreviewPageState extends BaseSelectStreamPage<ChannelsPreviewPage
     return ListView.builder(
         itemCount: channels.length,
         itemBuilder: (context, index) {
-          return LiveSelectTile(
-              channels[index], checkValues[index], () => onCheckBox(index));
+          return LiveSelectTile(channels[index], checkValues[index], () => onCheckBox(index));
         });
   }
 
@@ -80,8 +76,7 @@ class _ChannelsPreviewPageState extends BaseSelectStreamPage<ChannelsPreviewPage
         horizontalPadding: CARD_EDGE_INSETS,
         verticalPadding: CARD_EDGE_INSETS,
         children: List<Widget>.generate(vods.length, (int index) {
-          return VodSelectCard(
-              vods[index], checkValues[index], () => onCheckBox(index));
+          return VodSelectCard(vods[index], checkValues[index], () => onCheckBox(index));
         }));
   }
 }

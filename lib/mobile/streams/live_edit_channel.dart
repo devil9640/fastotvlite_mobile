@@ -50,13 +50,14 @@ abstract class _AbstractLiveEditPageState extends EditStreamPageState<_AbstractL
           child: PreviewIcon.live(iconController.text)),
       textField(translate(TR_EDIT_TITLE), nameController),
       textField(translate(TR_EDIT_GROUP), groupController),
-      textField(translate(TR_EDIT_VIDEO_LINK), videoLinkController, onSubmitted: () => setState(() => validator = videoLinkController.text.isNotEmpty)),
+      textField(translate(TR_EDIT_VIDEO_LINK), videoLinkController,
+          onSubmitted: () => setState(() => validator = videoLinkController.text.isNotEmpty)),
       textField(translate(TR_EDIT_ICON), iconController, onSubmitted: () => setState(() {})),
       textField('IARC', iarcController),
       textField(translate(TR_EPG_PROVIDER), idController),
     ]);
   }
-  
+
   String translate(String key) => AppLocalizations.of(context).translate(key);
 }
 
@@ -70,7 +71,7 @@ class LiveAddPage extends _AbstractLiveEditPage {
 class _LiveAddPageState extends _AbstractLiveEditPageState {
   @override
   String appBarTitle() => translate(TR_ADD_CHANNEL);
-  
+
   @override
   Widget deleteButton() => SizedBox();
 }

@@ -51,7 +51,7 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
   final TextEditingController _filter = new TextEditingController();
   StreamController<String> searchStream = StreamController<String>.broadcast();
   IconData _searchIcon = Icons.search;
-  
+
   String _translate(String key) => AppLocalizations.of(context).translate(key);
 
   void _fillTypes() {
@@ -61,7 +61,7 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
     bool isSaved = settings.saveLastViewed();
     String lastType;
     String lastChannel = settings.lastChannel();
-    
+
     if (_channels.isEmpty && widget.vods.isEmpty && widget.series.isEmpty) {
       _selectedType = TR_EMPTY;
       return;
@@ -133,9 +133,7 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
 
       default:
         return Center(
-            child: Padding(
-                padding: EdgeInsets.all(24),
-                child: Text(_translate(TR_NO_STREAMS), softWrap: true)));
+            child: Padding(padding: EdgeInsets.all(24), child: Text(_translate(TR_NO_STREAMS), softWrap: true)));
     }
   }
 
@@ -195,8 +193,7 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
               drawerEdgeDragWidth: _searchIcon == Icons.search ? null : 0,
               drawer: _drawer(),
               body: DoubleBackToCloseApp(
-                  snackBar: const SnackBar(content: Text('Tap back again to exit')),
-                  child: _getCurrentTabWidget()),
+                  snackBar: const SnackBar(content: Text('Tap back again to exit')), child: _getCurrentTabWidget()),
               floatingActionButton: _floatingButton());
         }));
   }
@@ -217,8 +214,7 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
         /// when search is enabled and for visual compliance
         leading: _searchIcon == Icons.search
             ? IconButton(
-                icon: Icon(Icons.menu, color: iconColor),
-                onPressed: () => _drawerKey.currentState.openDrawer())
+                icon: Icon(Icons.menu, color: iconColor), onPressed: () => _drawerKey.currentState.openDrawer())
             : Icon(Icons.search, color: iconColor),
         actions: <Widget>[IconButton(icon: Icon(_searchIcon, color: iconColor), onPressed: _searchPressed)]);
   }
@@ -333,11 +329,13 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
   }
 
   void _addStreams(PickStreamFrom source) async {
-    AddStreamResponse response = await showDialog(context: context, builder: (BuildContext context) => FilePickerDialog(source));
+    AddStreamResponse response =
+        await showDialog(context: context, builder: (BuildContext context) => FilePickerDialog(source));
     if (response == null) {
       _drawerKey.currentState.showSnackBar(SnackBar(
           content: Text(_translate(TR_NO_CHANNELS_ADDED)),
-          action: SnackBarAction(label: _translate(TR_CLOSE), onPressed: () => _drawerKey.currentState.hideCurrentSnackBar())));
+          action: SnackBarAction(
+              label: _translate(TR_CLOSE), onPressed: () => _drawerKey.currentState.hideCurrentSnackBar())));
     } else {
       if (response.type == StreamType.Live) {
         _addLiveStreams(response.channels);
@@ -361,7 +359,6 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
       }
     });
 
-    
     final events = locator<StreamListEvent>();
     events.publish(StreamsAddedEvent());
     _saveStreams(type: StreamType.Live);
@@ -380,7 +377,6 @@ class VideoAppState<C extends IStream> extends State<HomePage> with TickerProvid
       }
     });
 
-    
     final events = locator<StreamListEvent>();
     events.publish(StreamsAddedEvent());
     _saveStreams(type: StreamType.Vod);

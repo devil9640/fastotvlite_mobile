@@ -19,9 +19,7 @@ class _FilePickerDialogState extends BaseFilePickerDialogState {
   @override
   Widget textField() {
     OutlineInputBorder border() {
-      return OutlineInputBorder(
-          borderSide: BorderSide(
-              color: CustomColor().themeBrightnessColor(context), width: 1));
+      return OutlineInputBorder(borderSide: BorderSide(color: CustomColor().themeBrightnessColor(context), width: 1));
     }
 
     return new TextFormField(

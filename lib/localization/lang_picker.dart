@@ -47,11 +47,10 @@ class _LanguagePickerState extends State<LanguagePicker> {
               title: Text(AppLocalizations.of(context).translate(TR_LANGUAGE_CHOOSE) ?? "Choose language"),
               children: <Widget>[
                 SingleChildScrollView(
-                  child: new Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: new List<Widget>.generate(
-                          SUPPORTED_LOCALES.length,
-                          (int index) => _dialogItem(SUPPORTED_LANGUAGES[index], index))))
+                    child: new Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: new List<Widget>.generate(
+                            SUPPORTED_LOCALES.length, (int index) => _dialogItem(SUPPORTED_LANGUAGES[index], index))))
               ]);
         });
     if (widget.onChanged != null) {

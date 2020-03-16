@@ -67,7 +67,8 @@ class _LiveFutureTileState extends State<LiveFutureTile> {
           },
           onLongPress: () async {
             final epgUrl = channel.epgUrl();
-            LiveStream response = await Navigator.of(context).push(MaterialPageRoute(builder: (context) => LiveEditPage(channel)));
+            LiveStream response =
+                await Navigator.of(context).push(MaterialPageRoute(builder: (context) => LiveEditPage(channel)));
             if (response != null) {
               if (response.epgUrl() != epgUrl) {
                 channel.setRequested(false);

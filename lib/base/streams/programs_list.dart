@@ -14,11 +14,7 @@ import 'package:fastotvlite/base/streams/program_bloc.dart';
 
 String formatProgram(ProgrammeInfo program) {
   final timeZoneOffset = DateTime.now().timeZoneOffset;
-  return program.getStart(timeZoneOffset) +
-      ' - ' +
-      program.getEnd(timeZoneOffset) +
-      ' / ' +
-      program.getDuration();
+  return program.getStart(timeZoneOffset) + ' - ' + program.getEnd(timeZoneOffset) + ' / ' + program.getDuration();
 }
 
 class ProgramsListView extends StatefulWidget {
@@ -50,10 +46,7 @@ class _ProgramsListViewState extends State<ProgramsListView> {
                 return NoPrograms(widget.textColor);
               }
               return _ProgramsList(
-                  programs: snapshot.data,
-                  bloc: widget.programsBloc,
-                  index: _index,
-                  itemHeight: widget.itemHeight);
+                  programs: snapshot.data, bloc: widget.programsBloc, index: _index, itemHeight: widget.itemHeight);
             }));
   }
 }
@@ -87,8 +80,7 @@ class _ProgramsListState extends State<_ProgramsList> {
     _itemHeight = widget.itemHeight ?? ITEM_HEIGHT;
     _current = widget.index;
     programmeInfo = widget.programs[_current];
-    _scrollController = CustomScrollController(
-        itemHeight: _itemHeight, initOffset: _itemHeight * _current);
+    _scrollController = CustomScrollController(itemHeight: _itemHeight, initOffset: _itemHeight * _current);
     _initCurrentProgramSubscription();
   }
 
@@ -108,9 +100,7 @@ class _ProgramsListState extends State<_ProgramsList> {
           final program = widget.programs[index];
           final curUtc = DateTime.now().millisecondsSinceEpoch;
           final elevation = index == _current ? 1.0 : 0.0;
-          final currentColor = curUtc >= program.start && curUtc < program.stop
-              ? _activeColor()
-              : Colors.transparent;
+          final currentColor = curUtc >= program.start && curUtc < program.stop ? _activeColor() : Colors.transparent;
           return Opacity(
               opacity: curUtc < program.stop ? 1.0 : 0.4,
               child: Material(
@@ -118,10 +108,8 @@ class _ProgramsListState extends State<_ProgramsList> {
                   color: Colors.transparent,
                   child: Container(
                       height: _itemHeight,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: currentColor, width: 2)),
-                      child: _ProgramListTile(
-                          program: program, textColor: _textColor()))));
+                      decoration: BoxDecoration(border: Border.all(color: currentColor, width: 2)),
+                      child: _ProgramListTile(program: program, textColor: _textColor()))));
         });
   }
 
@@ -180,8 +168,6 @@ class _ProgramListTileState extends State<_ProgramListTile> {
             maxLines: 1,
             softWrap: false),
         subtitle: Opacity(
-            opacity: 0.6,
-            child: Text(formatProgram(widget.program),
-                style: TextStyle(color: widget.textColor))));
+            opacity: 0.6, child: Text(formatProgram(widget.program), style: TextStyle(color: widget.textColor))));
   }
 }

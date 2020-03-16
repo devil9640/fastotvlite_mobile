@@ -8,11 +8,13 @@ import 'package:fastotvlite/tv/add_streams/tv_edit_channel_page.dart';
 
 abstract class AbstractVodEditPage extends StatefulWidget {
   final VodStream stream;
+
   AbstractVodEditPage(this.stream);
 }
 
 abstract class AbstractVodEditPageState extends EditStreamPageTV<AbstractVodEditPage> {
   String appBarTitle() => 'Edit channel';
+
   VodStream stream() => widget.stream;
 
   @override
@@ -29,21 +31,19 @@ abstract class AbstractVodEditPageState extends EditStreamPageTV<AbstractVodEdit
   Widget editingPage() {
     final size = MediaQuery.of(context).size;
     return Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            PreviewIcon.vod(iconController.text),
-            SizedBox(width: 16),
-            Container(
-                width: size.width / 2,
-                child: SingleChildScrollView(
-                    child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-                  textField('Title', nameFieldNode, nameController),
-                  textField('Group', groupFieldNode, groupController),
-                  textField('Video link', urlFieldNode, videoLinkController),
-                  textField('Icon', iconFieldNode, iconController),
-                  textField('IARC', iarcFieldNode, iarcController)
-                ])))
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+      PreviewIcon.vod(iconController.text),
+      SizedBox(width: 16),
+      Container(
+          width: size.width / 2,
+          child: SingleChildScrollView(
+              child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            textField('Title', nameFieldNode, nameController),
+            textField('Group', groupFieldNode, groupController),
+            textField('Video link', urlFieldNode, videoLinkController),
+            textField('Icon', iconFieldNode, iconController),
+            textField('IARC', iarcFieldNode, iarcController)
+          ])))
     ]));
   }
 
@@ -76,6 +76,7 @@ abstract class AbstractVodEditPageState extends EditStreamPageTV<AbstractVodEdit
 
 class VodAddPageTV extends AbstractVodEditPage {
   VodAddPageTV(stream) : super(stream);
+
   @override
   _VodAddPageTVState createState() => _VodAddPageTVState();
 }
@@ -90,6 +91,7 @@ class _VodAddPageTVState extends AbstractVodEditPageState {
 
 class VodEditPageTV extends AbstractVodEditPage {
   VodEditPageTV(stream) : super(stream);
+
   @override
   _VodEditPageTVState createState() => _VodEditPageTVState();
 }

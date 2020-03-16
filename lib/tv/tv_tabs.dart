@@ -40,7 +40,7 @@ class HomeTV extends StatefulWidget {
   _HomeTVState createState() => _HomeTVState();
 }
 
-const TABBAR_HEIGHT =  72;
+const TABBAR_HEIGHT = 72;
 
 class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsBindingObserver {
   StreamController<NotificationType> channelsStreamController = StreamController<NotificationType>.broadcast();
@@ -53,7 +53,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
 
   List<LiveStream> _channels = [];
   List<VodStream> _vods = [];
-  
+
   TabController _tabController;
   int _currentType = 0;
   bool isVisible = true;
@@ -99,8 +99,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
     if (widget.series.isNotEmpty) {
       final series = TR_SERIES;
       _tabNodes.add(series);
-      _typesTabView.add(
-        TVVodPage(widget.series));
+      _typesTabView.add(TVVodPage(widget.series));
       if (isSaved && lastType == null) {
         for (int i = 0; i < widget.series.length; i++) {
           if (widget.series[i].id() == lastChannel) {
@@ -129,17 +128,14 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
   }
 
   void _initTabController() {
-    _tabController = TabController(
-        vsync: this,
-        length: _tabNodes.length,
-        initialIndex: _currentType);
+    _tabController = TabController(vsync: this, length: _tabNodes.length, initialIndex: _currentType);
   }
 
   @override
   void initState() {
     orientation.onlyLandscape();
     super.initState();
-    
+
     final events = locator<StreamListEvent>();
     events.subscribe<StreamsListEmptyEvent>().listen((_) => _onTypeDelete());
 
@@ -155,8 +151,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.paused ||
-        state == AppLifecycleState.inactive) {
+    if (state == AppLifecycleState.paused || state == AppLifecycleState.inactive) {
       _saveStreams();
     }
   }
@@ -184,8 +179,8 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
 
     Widget _home() {
       return _tabController.length > 0
-            ? TabBarView(key: UniqueKey(), controller: _tabController, children: _typesTabView)
-            : Center(child: Text(AppLocalizations.of(context).translate(TR_NO_STREAMS), style: TextStyle(fontSize: 24)));
+          ? TabBarView(key: UniqueKey(), controller: _tabController, children: _typesTabView)
+          : Center(child: Text(AppLocalizations.of(context).translate(TR_NO_STREAMS), style: TextStyle(fontSize: 24)));
     }
 
     return WillPopScope(
@@ -202,9 +197,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
                       Visibility(
                           visible: isVisible,
                           child: AppBar(
-                              leading: Padding(
-                                  padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
-                                  child: Logo(LOGO_PATH)),
+                              leading: Padding(padding: const EdgeInsets.fromLTRB(16, 8, 0, 8), child: Logo(LOGO_PATH)),
                               backgroundColor: Colors.transparent,
                               iconTheme: IconThemeData(color: CustomColor().themeBrightnessColor(context)),
                               actionsIconTheme: IconThemeData(color: CustomColor().themeBrightnessColor(context)),
@@ -237,9 +230,11 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
   }
 
   void _onAdd() async {
-    PickStreamFrom _source = await showDialog(context: context, builder: (BuildContext context) => StreamTypePickerTV());
+    PickStreamFrom _source =
+        await showDialog(context: context, builder: (BuildContext context) => StreamTypePickerTV());
     if (_source != null) {
-      AddStreamResponse result = await showDialog(context: context, builder: (BuildContext context) => FilePickerDialogTV(_source));
+      AddStreamResponse result =
+          await showDialog(context: context, builder: (BuildContext context) => FilePickerDialogTV(_source));
       if (result != null) {
         if (result.type == StreamType.Live) {
           _addLiveStreams(result.channels);
@@ -250,7 +245,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
         }
       }
       if (mounted) {
-        setState((){});
+        setState(() {});
       }
     }
   }
@@ -296,9 +291,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
   }
 
   void _showExitDialog() async {
-    await showDialog(
-        context: context,
-        builder: (BuildContext context) => ExitDialog());
+    await showDialog(context: context, builder: (BuildContext context) => ExitDialog());
   }
 
   void _saveStreams({StreamType type}) {
@@ -326,7 +319,7 @@ class _HomeTVState extends State<HomeTV> with TickerProviderStateMixin, WidgetsB
       _tabNodes.removeAt(_currentType);
     }
     _initTabController();
-    setState((){});
+    setState(() {});
   }
 }
 
@@ -338,12 +331,10 @@ class _Tab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      focusNode: FocusNode(),
-      autofocus: true,
-          child: Tab(
-          child: Text(AppLocalizations.of(context).translate(title),
-              style: TextStyle(
-                  fontSize: 20,
-                  color: CustomColor().themeBrightnessColor(context)))));
+        focusNode: FocusNode(),
+        autofocus: true,
+        child: Tab(
+            child: Text(AppLocalizations.of(context).translate(title),
+                style: TextStyle(fontSize: 20, color: CustomColor().themeBrightnessColor(context)))));
   }
 }

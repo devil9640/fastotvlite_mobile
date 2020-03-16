@@ -40,6 +40,7 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
   bool hasTouch = true;
   String hintText = TR_INPUT_LINK;
   TextEditingController controller = new TextEditingController();
+
   Widget textField();
 
   @override
@@ -58,23 +59,27 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
           Spacer(),
           _exitButton()
         ]),
-        titlePadding: EdgeInsets.symmetric(vertical: !hasTouch || _inputLink ? 12 : 24, horizontal: _inputLink ? 8 : 24),
+        titlePadding:
+            EdgeInsets.symmetric(vertical: !hasTouch || _inputLink ? 12 : 24, horizontal: _inputLink ? 8 : 24),
         contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: _inputLink ? 24 : 0),
-        content: loading ? _loadingWidget() : SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          Divider(height: 0),
-          _inputLink ? textField() : _tiles(),
-          Divider(height: 0),
-          _fileButtonsRow(),
-          Divider(height: 0)
-        ])));
+        content: loading
+            ? _loadingWidget()
+            : SingleChildScrollView(
+                child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                Divider(height: 0),
+                _inputLink ? textField() : _tiles(),
+                Divider(height: 0),
+                _fileButtonsRow(),
+                Divider(height: 0)
+              ])));
   }
 
   Widget _loadingWidget() {
     final color = hasTouch ? Theme.of(context).accentColor : CustomColor().tvSelectedColor();
     return SizedBox(
-      height: 64,
-      width: 64,
-      child: Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(color))));
+        height: 64,
+        width: 64,
+        child: Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(color))));
   }
 
   Widget _button(String text, void Function() onPressed, {Color color}) {
@@ -83,7 +88,10 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
     return FlatButton(
         color: activeColor,
         disabledColor: disabledColor,
-        child: Text(text, style: hasTouch ? TextStyle(color: CustomColor().backGroundColorBrightness(!validator ? disabledColor : activeColor)) : null),
+        child: Text(text,
+            style: hasTouch
+                ? TextStyle(color: CustomColor().backGroundColorBrightness(!validator ? disabledColor : activeColor))
+                : null),
         onPressed: onPressed);
   }
 
@@ -92,9 +100,7 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
       return SizedBox();
     }
     return IconButton(
-      icon: Icon(Icons.arrow_back),
-      onPressed: () => setState(() => _inputLink = false),
-      padding: EdgeInsets.all(0));
+        icon: Icon(Icons.arrow_back), onPressed: () => setState(() => _inputLink = false), padding: EdgeInsets.all(0));
   }
 
   Widget _exitButton() {
@@ -109,10 +115,8 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
   }
 
   Widget _tiles() {
-    return Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-      _typeTile(StreamType.Live),
-      _typeTile(StreamType.Vod)
-    ]);
+    return Column(
+        mainAxisSize: MainAxisSize.min, children: <Widget>[_typeTile(StreamType.Live), _typeTile(StreamType.Vod)]);
   }
 
   Widget _typeTile(StreamType value) {
@@ -136,8 +140,7 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
         padding: EdgeInsets.symmetric(horizontal: _inputLink ? 0 : 24, vertical: 16),
         child: _inputLink
             ? _button(translate(TR_LOAD), _streamType == null ? null : () => _loadFromLink())
-            : Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-                Widget>[
+            : Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
                 _button(translate(TR_ADD_FILE), _streamType == null ? null : () => _onFile()),
                 Padding(padding: const EdgeInsets.all(8.0), child: Text(translate(TR_ADD_OR))),
                 _button(translate(TR_ADD_LINK), _streamType == null ? null : () => setState(() => _inputLink = true))
@@ -159,8 +162,9 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
       AddStreamResponse output;
       if (m3uText != null) {
         if (m3uText.isNotEmpty) {
-          output = await Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
-            hasTouch ? ChannelsPreviewPage(m3uText, _streamType) : SelectStreamTV(m3uText, _streamType)));
+          output = await Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  hasTouch ? ChannelsPreviewPage(m3uText, _streamType) : SelectStreamTV(m3uText, _streamType)));
         }
       }
       WidgetsBinding.instance.addPostFrameCallback((_) => Navigator.of(context).pop(output));
@@ -213,6 +217,6 @@ abstract class BaseFilePickerDialogState extends State<BaseFilePickerDialog> {
     m3uText = await StreamFilePicker().file();
     _setLoading(false);
   }
-  
+
   String translate(String key) => AppLocalizations.of(context).translate(key);
 }

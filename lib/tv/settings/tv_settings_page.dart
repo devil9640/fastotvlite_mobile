@@ -155,7 +155,9 @@ class _SettingPageTVState extends State<SettingPageTV> {
                                                 border: Border.all(
                                                     color: getDecoration(categoriesList, currentType, index),
                                                     width: 2)),
-                                            child: ListTile(title: Text(AppLocalizations.of(context).translate(ITEM_LIST[index]), style: textStyle)))))),
+                                            child: ListTile(
+                                                title: Text(AppLocalizations.of(context).translate(ITEM_LIST[index]),
+                                                    style: textStyle)))))),
                             verticalDivider,
                             Container(
                                 width: sideFieldsWidth,
@@ -192,7 +194,9 @@ class _SettingPageTVState extends State<SettingPageTV> {
   }
 
   Widget paddingSetupContainer({double right, double bottom}) {
-    Color color = settingsList.hasPrimaryFocus && ITEM_LIST[currentType] == TR_SCREEN_SIZE ? Colors.redAccent : Colors.transparent;
+    Color color = settingsList.hasPrimaryFocus && ITEM_LIST[currentType] == TR_SCREEN_SIZE
+        ? Colors.redAccent
+        : Colors.transparent;
     return Positioned(right: right, bottom: bottom, child: Container(color: color, width: 24, height: 24));
   }
 

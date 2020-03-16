@@ -34,9 +34,10 @@ class _LanguagePickerTVState extends State<LanguagePickerTV> {
     return Focus(
         canRequestFocus: false,
         child: Container(
-            child: Column(mainAxisSize: MainAxisSize.min, children: new List<Widget>.generate(
-                          SUPPORTED_LANGUAGES.length,
-                          (int index) => _dialogItem(SUPPORTED_LANGUAGES[index], index)))));
+            child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: new List<Widget>.generate(
+                    SUPPORTED_LANGUAGES.length, (int index) => _dialogItem(SUPPORTED_LANGUAGES[index], index)))));
   }
 
   Widget _dialogItem(String text, int itemvalue) {
@@ -64,7 +65,6 @@ class _LanguagePickerTVState extends State<LanguagePickerTV> {
     settings.setCountryCode(selectedLocale.countryCode);
     widget.callback();
   }
-
 
   bool _listControl(FocusNode node, RawKeyEvent event) {
     if (event is RawKeyDownEvent && event.data is RawKeyEventDataAndroid) {

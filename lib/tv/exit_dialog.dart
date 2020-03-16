@@ -95,6 +95,6 @@ class _ExitDialogState extends State<ExitDialog> {
               }))
     ]);
   }
-  
+
   String _translate(String key) => AppLocalizations.of(context).translate(key);
 }

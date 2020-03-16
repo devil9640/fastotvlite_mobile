@@ -40,7 +40,7 @@ abstract class VideoAppState<T extends IStream> extends State<BaseListTab> with 
 
     parseChannels();
     initTabController();
-    
+
     final events = locator<StreamListEvent>();
     events.subscribe<StreamsAddedEvent>().listen((_) {
       parseChannels();
@@ -133,7 +133,7 @@ abstract class VideoAppState<T extends IStream> extends State<BaseListTab> with 
   }
 
   Widget _generateTab(String title) {
-    if (title ==  TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
+    if (title == TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
       return new Tab(text: AppLocalizations.of(context).translate(title));
     }
     return new Tab(text: AppLocalizations.toUtf8(title));
@@ -209,7 +209,7 @@ abstract class VideoAppState<T extends IStream> extends State<BaseListTab> with 
   /// Edit
 
   void handleStreamEdit() {
-    if(widget.channels.isNotEmpty) {
+    if (widget.channels.isNotEmpty) {
       final startIndex = tabController.index;
       final currentGroup = channelsMap.keys.toList().elementAt(startIndex);
       parseChannels();

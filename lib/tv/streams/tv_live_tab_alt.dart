@@ -86,7 +86,7 @@ class _ChannelsTabHomeTValtState extends State<ChannelsTabHomeTValt> {
   @override
   void initState() {
     super.initState();
-    
+
     final settings = locator<LocalStorageService>();
     scale = settings.screenScale();
 
@@ -158,50 +158,40 @@ class _ChannelsTabHomeTValtState extends State<ChannelsTabHomeTValt> {
     Widget channelInfo() {
       return Padding(
           padding: EdgeInsets.all(16.0),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _TimeLine(programsBloc, Size(availableSpace.width / 2, 36 * scale)),
-                SizedBox(height: 16 * scale),
-                Row(
-                    children: <Widget>[
-                      Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(AppLocalizations.of(context).translate(TR_CURRENT_CHANNEL)),
-                            Text(AppLocalizations.toUtf8(currentPlaying.displayName()), style: TextStyle(fontSize: 24 * scale), overflow: TextOverflow.ellipsis)]),
-                      Spacer(),
-                      FavoriteStarButton(currentPlaying.favorite(),
-                          onFavoriteChanged: (bool value) => _handleFavorite(),
-                          selectedColor: CustomColor().tvSelectedColor()),
-                      CustomIcons(Icons.edit, () => _editChannel(currentPlaying)),
-                      CustomIcons(Icons.delete, () => _deleteChannel(currentPlaying))
-                    ]),
-                SizedBox(height: 16 * scale),
-                _ProgramTitle(programsBloc),
-                _ProgramName(programsBloc, Size(availableSpace.width / 2, 24 * scale), 24 * scale)
-              ]));
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: <Widget>[
+            _TimeLine(programsBloc, Size(availableSpace.width / 2, 36 * scale)),
+            SizedBox(height: 16 * scale),
+            Row(children: <Widget>[
+              Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+                Text(AppLocalizations.of(context).translate(TR_CURRENT_CHANNEL)),
+                Text(AppLocalizations.toUtf8(currentPlaying.displayName()),
+                    style: TextStyle(fontSize: 24 * scale), overflow: TextOverflow.ellipsis)
+              ]),
+              Spacer(),
+              FavoriteStarButton(currentPlaying.favorite(),
+                  onFavoriteChanged: (bool value) => _handleFavorite(), selectedColor: CustomColor().tvSelectedColor()),
+              CustomIcons(Icons.edit, () => _editChannel(currentPlaying)),
+              CustomIcons(Icons.delete, () => _deleteChannel(currentPlaying))
+            ]),
+            SizedBox(height: 16 * scale),
+            _ProgramTitle(programsBloc),
+            _ProgramName(programsBloc, Size(availableSpace.width / 2, 24 * scale), 24 * scale)
+          ]));
     }
 
     Widget programs() {
       return _Programs(
-          LIST_ITEM_SIZE,
-          Size(availableSpace.width * 0.3, availableSpace.height - TABBAR_HEIGHT),
-          programsBloc);
+          LIST_ITEM_SIZE, Size(availableSpace.width * 0.3, availableSpace.height - TABBAR_HEIGHT), programsBloc);
     }
 
     return Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
       Visibility(
           visible: notFullScreen,
-          child: Column(children: <Widget>[
-            categoriesWidget(),
-            Divider(height: 0.0),
-            channelsList()
-          ])),
+          child: Column(children: <Widget>[categoriesWidget(), Divider(height: 0.0), channelsList()])),
       Visibility(visible: notFullScreen, child: VerticalDivider(width: 0.0)),
-      Expanded(child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      Expanded(
+          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
         _TvPlayerWrap(_playerPage, availableSpace, !notFullScreen, _onPlayer),
         Visibility(visible: notFullScreen, child: channelInfo())
       ])),
@@ -314,8 +304,7 @@ class _ChannelsTabHomeTValtState extends State<ChannelsTabHomeTValt> {
                 maxLines: 1,
                 softWrap: false),
             Spacer(),
-            Icon(_playerPage.isPlaying() ? Icons.pause : Icons.play_arrow,
-                size: 48, color: contentColor)
+            Icon(_playerPage.isPlaying() ? Icons.pause : Icons.play_arrow, size: 48, color: contentColor)
           ])));
       Scaffold.of(context).showSnackBar(snack).closed.then((_) {
         _isSnackbarActive = false;
@@ -378,7 +367,8 @@ class _ChannelsTabHomeTValtState extends State<ChannelsTabHomeTValt> {
 
   void _editChannel(LiveStream channel) async {
     final epgUrl = channel.epgUrl();
-    LiveStream response = await Navigator.of(context).push(MaterialPageRoute(builder: (context) => LiveEditPageTV(channel)));
+    LiveStream response =
+        await Navigator.of(context).push(MaterialPageRoute(builder: (context) => LiveEditPageTV(channel)));
     _parseChannels();
     if (response.epgUrl() != epgUrl) {
       channel.setRequested(false);
@@ -535,12 +525,7 @@ class _ChannelsList extends StatelessWidget {
   final double itemHeight;
   final void Function(int index) onTap;
 
-  _ChannelsList(
-      {this.channels,
-      this.scrollController,
-      this.itemHeight,
-      this.size,
-      this.onTap});
+  _ChannelsList({this.channels, this.scrollController, this.itemHeight, this.size, this.onTap});
 
   Widget _channelAvatar(LiveStream channel) => PreviewIcon.live(channel.icon(), height: 40, width: 40);
 
@@ -559,11 +544,8 @@ class _ChannelsList extends StatelessWidget {
                   child: ListTile(
                       onTap: () => onTap(index),
                       leading: _channelAvatar(channel),
-                      title: Text(
-                          AppLocalizations.toUtf8(channel.displayName()),
-                          style: TextStyle(fontSize: itemHeight / 4),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis)));
+                      title: Text(AppLocalizations.toUtf8(channel.displayName()),
+                          style: TextStyle(fontSize: itemHeight / 4), maxLines: 2, overflow: TextOverflow.ellipsis)));
             }));
   }
 }
@@ -603,13 +585,11 @@ class _CategoriesState extends State<_Categories> {
         child: Container(
             width: widget.size.width,
             height: widget.size.height,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Icon(Icons.keyboard_arrow_left, color: _color),
-                  Text(_title(widget.category)),
-                  Icon(Icons.keyboard_arrow_right, color: _color)
-                ])));
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
+              Icon(Icons.keyboard_arrow_left, color: _color),
+              Text(_title(widget.category)),
+              Icon(Icons.keyboard_arrow_right, color: _color)
+            ])));
   }
 
   void _onFocusChange() {
@@ -620,10 +600,10 @@ class _CategoriesState extends State<_Categories> {
         _color = CustomColor().tvUnselectedColor();
       }
     });
-  }  
+  }
 
   String _title(String title) {
-    if (title ==  TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
+    if (title == TR_ALL || title == TR_RECENT || title == TR_FAVORITE) {
       return AppLocalizations.of(context).translate(title);
     }
     return AppLocalizations.toUtf8(title);
@@ -646,17 +626,15 @@ class _TimeLine extends StatelessWidget {
           }
           return Container(
               width: size.width,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    LiveTime.current(programmeInfo: snapshot.data),
-                    LiveTimeLine(
-                        programmeInfo: snapshot.data,
-                        width: size.width / 1.5,
-                        height: 6,
-                        color: CustomColor().tvSelectedColor()),
-                    LiveTime.end(programmeInfo: snapshot.data)
-                  ]));
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
+                LiveTime.current(programmeInfo: snapshot.data),
+                LiveTimeLine(
+                    programmeInfo: snapshot.data,
+                    width: size.width / 1.5,
+                    height: 6,
+                    color: CustomColor().tvSelectedColor()),
+                LiveTime.end(programmeInfo: snapshot.data)
+              ]));
         });
   }
 }
@@ -667,6 +645,7 @@ class _ProgramName extends StatelessWidget {
   final double textSize;
 
   _ProgramName(this.programsBloc, this.size, this.textSize);
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<ProgrammeInfo>(
@@ -679,8 +658,7 @@ class _ProgramName extends StatelessWidget {
               height: size.height,
               width: size.width,
               child: Text(AppLocalizations.toUtf8(snapshot.data?.title ?? ''),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: textSize)));
+                  overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: textSize)));
         });
   }
 }
@@ -689,6 +667,7 @@ class _ProgramTitle extends StatelessWidget {
   final ProgramsBloc programsBloc;
 
   _ProgramTitle(this.programsBloc);
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<ProgrammeInfo>(
@@ -783,6 +762,7 @@ class _NoChannels extends StatelessWidget {
   final Size size;
 
   _NoChannels.favorite(this.size) : type = 0;
+
   _NoChannels.recent(this.size) : type = 1;
 
   @override

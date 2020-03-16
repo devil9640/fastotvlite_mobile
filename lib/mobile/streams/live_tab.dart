@@ -47,7 +47,7 @@ class LiveVideoAppState extends VideoAppState<LiveStream> with ILiveFutureTileOb
   Widget tile(int, List<LiveStream> channels) {
     return LiveFutureTile(channels: channels, index: int, observer: this);
   }
-  
+
   ListView listBuilder(List<LiveStream> channels) {
     return ListView.separated(
         separatorBuilder: (context, int index) => Divider(height: 0),

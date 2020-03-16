@@ -47,7 +47,8 @@ abstract class _AbstractVodEditPageState extends EditStreamPageState<_AbstractVo
           child: PreviewIcon.vod(iconController.text)),
       textField(translate(TR_EDIT_TITLE), nameController),
       textField(translate(TR_EDIT_GROUP), groupController),
-      textField(translate(TR_EDIT_VIDEO_LINK), videoLinkController, onSubmitted: () => setState(() => validator = videoLinkController.text.isNotEmpty)),
+      textField(translate(TR_EDIT_VIDEO_LINK), videoLinkController,
+          onSubmitted: () => setState(() => validator = videoLinkController.text.isNotEmpty)),
       textField(translate(TR_EDIT_ICON), iconController, onSubmitted: () => setState(() {})),
       textField('IARC', iarcController)
     ]);

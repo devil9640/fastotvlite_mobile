@@ -155,7 +155,7 @@ class LiveStream extends IStream {
       return initializingCompleter.future;
     }
   }
-  
+
   static List<ProgrammeInfo> _sliceLastByTime(List<ProgrammeInfo> origin, int time) {
     for (int i = 0; i < origin.length; ++i) {
       final pr = origin[i];
