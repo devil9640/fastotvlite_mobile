@@ -17,7 +17,7 @@ dependencies:
       ref: master
   video_player:
     git:
-      url: https://gitlab.com/fastogt/video_player.git
+      url: https://github.com/fastogt/video_player.git
       ref: master
   fastotv_common:
     git:
