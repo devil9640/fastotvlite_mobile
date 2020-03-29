@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
+import 'package:flutter/material.dart';
 
 const double TEXTFIELD_PADDING = 4;
 const double TOTAL_TEXTFIELD_HEIGHT = 64;

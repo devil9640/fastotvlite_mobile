@@ -1,15 +1,12 @@
-import 'package:flutter/services.dart';
-
-import 'package:flutter/material.dart';
-import 'package:persist_theme/persist_theme.dart';
-import 'package:provider/provider.dart';
-
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/tv/key_code.dart';
-
-import 'package:fastotvlite/tv/settings/tv_settings_page.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/tv/settings/tv_settings_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:persist_theme/persist_theme.dart';
+import 'package:provider/provider.dart';
 
 class ThemePickerTV extends StatefulWidget {
   final ThemeModel model;

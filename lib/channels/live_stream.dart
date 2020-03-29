@@ -1,19 +1,16 @@
 import 'dart:async';
 
-import 'package:quiver/core.dart';
-import 'package:http/http.dart' as http;
-
+import 'package:fastotv_common/time_manager.dart';
 import 'package:fastotv_dart/commands_info/channel_info.dart';
+import 'package:fastotv_dart/commands_info/epg_info.dart';
 import 'package:fastotv_dart/commands_info/programme_info.dart';
 import 'package:fastotv_dart/commands_info/stream_base_info.dart';
-import 'package:fastotv_dart/commands_info/epg_info.dart';
-
-import 'package:fastotv_common/epg_parser.dart';
-import 'package:fastotv_common/time_manager.dart';
-
 import 'package:fastotvlite/channels/istream.dart';
 import 'package:fastotvlite/constants.dart';
 import 'package:fastotvlite/service_locator.dart';
+import 'package:flutter_fastotv_common/epg_parser.dart';
+import 'package:http/http.dart' as http;
+import 'package:quiver/core.dart';
 
 class LiveStream extends IStream {
   static const int MAX_PROGRAMS_COUNT = 100;

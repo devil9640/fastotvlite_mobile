@@ -1,16 +1,13 @@
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_dart/commands_info/programme_info.dart';
-
-import 'package:fastotv_common/scroll_controller_manager.dart';
-import 'package:fastotv_common/screen_orientation.dart' as orientation;
-import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/runtime_device.dart';
-
-import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotv_common/screen_orientation.dart' as orientation;
+import 'package:fastotv_common/scroll_controller_manager.dart';
+import 'package:fastotv_dart/commands_info/programme_info.dart';
 import 'package:fastotvlite/base/streams/no_programs.dart';
 import 'package:fastotvlite/base/streams/program_bloc.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:flutter/material.dart';
 
 String formatProgram(ProgrammeInfo program) {
   final timeZoneOffset = DateTime.now().timeZoneOffset;

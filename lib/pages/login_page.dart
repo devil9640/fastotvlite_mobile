@@ -1,14 +1,12 @@
+import 'package:fastotv_common/runtime_device.dart';
 import 'package:fastotvlite/channels/live_stream.dart';
 import 'package:fastotvlite/channels/vod_stream.dart';
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_common/runtime_device.dart';
-
-import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/mobile/mobile_home.dart';
+import 'package:fastotvlite/service_locator.dart';
 import 'package:fastotvlite/shared_prefs.dart';
 import 'package:fastotvlite/tv/tv_tabs.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:flutter/material.dart';
 
 class LoginPageBuffer extends StatefulWidget {
   @override

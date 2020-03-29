@@ -1,17 +1,14 @@
+import 'package:fastotv_common/colors.dart';
+import 'package:fastotv_common/package_manager.dart';
+import 'package:fastotv_common/runtime_device.dart';
+import 'package:fastotv_common/tv/key_code.dart';
 import 'package:fastotv_device_info/devices.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:fastotvlite/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:persist_theme/persist_theme.dart';
 import 'package:provider/provider.dart';
-
-import 'package:fastotv_common/colors.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-import 'package:fastotv_common/package_manager.dart';
-import 'package:fastotv_common/tv/key_code.dart';
-
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotv_common/runtime_device.dart';
 
 const DEVELOPER_SETTINGS_COUNTER = 7;
 

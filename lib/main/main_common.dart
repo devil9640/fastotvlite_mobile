@@ -1,14 +1,11 @@
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:fastotvlite/pages/login_page.dart';
+import 'package:fastotvlite/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:persist_theme/persist_theme.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-
-import 'package:fastotvlite/localization/app_localizations.dart';
-
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotvlite/pages/login_page.dart';
 
 Future<void> mainCommon() async {
   WidgetsFlutterBinding.ensureInitialized();

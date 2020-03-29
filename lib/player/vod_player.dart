@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-
-import 'package:fastotv_common/player/player.dart';
-
 import 'package:fastotvlite/channels/vod_stream.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/player/player.dart';
+import 'package:video_player/video_player.dart';
 
 class LiteVodPlayer<T extends StatefulWidget> extends LitePlayer<T> {
   VodStream channel;

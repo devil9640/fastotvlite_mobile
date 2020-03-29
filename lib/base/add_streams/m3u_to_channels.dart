@@ -1,8 +1,7 @@
-import 'package:fastotv_dart/commands_info/movie_info.dart';
 import 'package:fastotv_dart/commands_info/channel_info.dart';
 import 'package:fastotv_dart/commands_info/epg_info.dart';
+import 'package:fastotv_dart/commands_info/movie_info.dart';
 import 'package:fastotv_dart/commands_info/vod_info.dart';
-
 import 'package:fastotvlite/channels/live_stream.dart';
 import 'package:fastotvlite/channels/vod_stream.dart';
 import 'package:fastotvlite/service_locator.dart';

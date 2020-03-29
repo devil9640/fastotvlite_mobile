@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_common/player/player.dart';
-
 import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/player/player.dart';
 
 class LiteStreamPlayer<T extends StatefulWidget> extends LitePlayer<T> {
   LiveStream channel;

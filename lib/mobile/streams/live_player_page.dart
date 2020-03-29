@@ -1,22 +1,20 @@
-import 'dart:core';
 import 'dart:async';
+import 'dart:core';
 
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_common/chromecast/chromecast_info.dart';
-import 'package:fastotv_common/chromecast/chromecast_filler.dart';
-import 'package:fastotv_common/screen_orientation.dart' as orientation;
-import 'package:fastotv_common/base/controls/custom_appbar.dart';
-import 'package:fastotv_common/base/controls/fullscreen_button.dart';
 import 'package:fastotv_common/base/controls/player_buttons.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-
-import 'package:fastotvlite/base/streams/program_bloc.dart';
-import 'package:fastotvlite/channels/live_stream.dart';
-import 'package:fastotvlite/base/streams/programs_list.dart';
-import 'package:fastotvlite/player/stream_player.dart';
+import 'package:fastotv_common/screen_orientation.dart' as orientation;
 import 'package:fastotvlite/base/streams/live_bottom_controls.dart';
+import 'package:fastotvlite/base/streams/program_bloc.dart';
+import 'package:fastotvlite/base/streams/programs_list.dart';
+import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/player/common_player.dart';
+import 'package:fastotvlite/player/stream_player.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/custom_appbar.dart';
+import 'package:flutter_fastotv_common/base/controls/fullscreen_button.dart';
+import 'package:flutter_fastotv_common/chromecast/chromecast_filler.dart';
+import 'package:flutter_fastotv_common/chromecast/chromecast_info.dart';
 
 class ChannelPage extends StatefulWidget {
   final List<LiveStream> channels;

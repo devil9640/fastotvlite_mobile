@@ -1,10 +1,8 @@
+import 'package:fastotv_common/colors.dart';
+import 'package:fastotvlite/base/add_streams/add_stream_dialog.dart';
 import 'package:fastotvlite/localization/translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:fastotv_common/colors.dart';
-
-import 'package:fastotvlite/base/add_streams/add_stream_dialog.dart';
 
 class FilePickerDialog extends BaseFilePickerDialog {
   final PickStreamFrom source;

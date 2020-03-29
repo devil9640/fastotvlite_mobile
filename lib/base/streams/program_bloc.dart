@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:fastotv_common/epg_parser.dart';
-import 'package:rxdart/rxdart.dart';
-
-import 'package:fastotvlite/channels/live_stream.dart';
 import 'package:fastotv_dart/commands_info/programme_info.dart';
+import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:flutter_fastotv_common/epg_parser.dart';
+import 'package:rxdart/rxdart.dart';
 
 class ProgramsBloc {
   final LiveStream channel;

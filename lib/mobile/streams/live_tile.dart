@@ -1,15 +1,12 @@
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_dart/commands_info/programme_info.dart';
-
-import 'package:fastotv_common/base/controls/preview_icon.dart';
 import 'package:fastotv_common/base/controls/favorite_button.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-
-import 'package:fastotvlite/channels/live_stream.dart';
-import 'package:fastotvlite/base/streams/program_bloc.dart';
+import 'package:fastotv_dart/commands_info/programme_info.dart';
 import 'package:fastotvlite/base/streams/live_timeline.dart';
+import 'package:fastotvlite/base/streams/program_bloc.dart';
+import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/mobile/streams/live_edit_channel.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/preview_icon.dart';
 
 abstract class ILiveFutureTileObserver {
   void onTap(List<LiveStream> streams, int position);

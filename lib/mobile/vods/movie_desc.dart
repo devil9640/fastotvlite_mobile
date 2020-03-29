@@ -1,15 +1,13 @@
+import 'package:fastotv_common/base/controls/favorite_button.dart';
+import 'package:fastotv_common/colors.dart';
+import 'package:fastotvlite/base/vods/vod_description.dart';
+import 'package:fastotvlite/channels/vod_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/preview_icon.dart';
+import 'package:flutter_fastotv_common/base/vods/vod_description.dart';
 import 'package:persist_theme/persist_theme.dart';
 import 'package:provider/provider.dart';
-
-import 'package:fastotv_common/base/controls/preview_icon.dart';
-import 'package:fastotv_common/base/controls/favorite_button.dart';
-import 'package:fastotv_common/base/vods/vod_description.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-import 'package:fastotv_common/colors.dart';
-
-import 'package:fastotvlite/channels/vod_stream.dart';
-import 'package:fastotvlite/base/vods/vod_description.dart';
 
 class VodDescription extends StatefulWidget {
   final VodStream vod;

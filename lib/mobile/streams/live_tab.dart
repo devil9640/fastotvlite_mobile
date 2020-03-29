@@ -1,18 +1,16 @@
 import 'dart:async';
 import 'dart:core';
 
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/screen_orientation.dart' as orientation;
-
 import 'package:fastotvlite/channels/live_stream.dart';
-import 'package:fastotvlite/mobile/base_tab.dart';
-import 'package:fastotvlite/mobile/streams/live_tile.dart';
-import 'package:fastotvlite/mobile/streams/live_player_page.dart';
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotvlite/shared_prefs.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/mobile/base_tab.dart';
+import 'package:fastotvlite/mobile/streams/live_player_page.dart';
+import 'package:fastotvlite/mobile/streams/live_tile.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/shared_prefs.dart';
+import 'package:flutter/material.dart';
 
 class LiveTab extends BaseListTab<LiveStream> {
   LiveTab(key, channels, searchText) : super(key, channels, searchText);

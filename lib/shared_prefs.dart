@@ -1,9 +1,9 @@
 import 'dart:convert';
 
+import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:fastotvlite/channels/vod_stream.dart';
 import 'package:fastotvlite/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:fastotvlite/channels/vod_stream.dart';
-import 'package:fastotvlite/channels/live_stream.dart';
 
 const IARC_DEFAULT_AGE = 21;
 const MAX_IARC_AGE = IARC_DEFAULT_AGE;

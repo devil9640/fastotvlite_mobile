@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_dart/commands_info/device_info.dart';
-
-import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/base/login/textfields.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:flutter/material.dart';
 
 class DevicePicker extends StatefulWidget {
   final List<DeviceInfo> devices;

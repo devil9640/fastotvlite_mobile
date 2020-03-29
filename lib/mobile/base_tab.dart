@@ -1,18 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/base/controls/no_channels.dart';
 import 'package:fastotv_common/colors.dart';
-
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotvlite/channels/istream.dart';
 import 'package:fastotvlite/base/stream_parser.dart';
-import 'package:fastotvlite/events/stream_list_events.dart';
-import 'package:fastotvlite/events/descending.dart';
+import 'package:fastotvlite/channels/istream.dart';
 import 'package:fastotvlite/events/ascending.dart';
+import 'package:fastotvlite/events/descending.dart';
+import 'package:fastotvlite/events/stream_list_events.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:flutter/material.dart';
 
 const TAB_BAR_HEIGHT = 46.0;
 

@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
+import 'package:flutter/material.dart';
 
 class CustomIcons extends StatelessWidget {
   final Function() onTap;

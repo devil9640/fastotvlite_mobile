@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:persist_theme/persist_theme.dart';
-import 'package:provider/provider.dart';
-
 import 'package:fastotv_common/colors.dart';
-import 'package:fastotv_common/base/vods/vod_description.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-
 import 'package:fastotvlite/channels/vod_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/mobile/vods/vod_player_page.dart';
 import 'package:fastotvlite/mobile/vods/vod_trailer_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/vods/vod_description.dart';
+import 'package:persist_theme/persist_theme.dart';
+import 'package:provider/provider.dart';
 
 class SideInfo extends StatelessWidget {
   final int duration;

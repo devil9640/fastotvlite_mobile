@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
+import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/system_methods.dart' as system;
 import 'package:fastotv_common/tv/key_code.dart';
-import 'package:fastotv_common/colors.dart';
-
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ExitDialog extends StatefulWidget {
   @override

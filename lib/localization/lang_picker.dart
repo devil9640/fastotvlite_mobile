@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
-
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:flutter/material.dart';
 
 class LanguagePicker extends StatefulWidget {
   final Function onChanged;

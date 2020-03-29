@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/wrap.dart';
-
-import 'package:fastotvlite/base/add_streams/select_streams.dart';
 import 'package:fastotvlite/base/add_streams/m3u_to_channels.dart';
+import 'package:fastotvlite/base/add_streams/select_streams.dart';
 import 'package:fastotvlite/base/vods/vod_cards_page.dart';
+import 'package:flutter/material.dart';
 
 class ChannelsPreviewPage extends StatefulWidget {
   final String m3uText;

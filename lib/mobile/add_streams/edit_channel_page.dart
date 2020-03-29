@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
-
 import 'package:fastotvlite/channels/istream.dart';
+import 'package:flutter/material.dart';
 
 abstract class EditStreamPageState<T extends StatefulWidget> extends State<T> {
   TextEditingController groupController;

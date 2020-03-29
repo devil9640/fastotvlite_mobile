@@ -1,5 +1,4 @@
 import 'package:fastotvlite/channels/istream.dart';
-
 import 'package:fastotvlite/localization/translations.dart';
 
 class StreamsParser<T extends IStream> {

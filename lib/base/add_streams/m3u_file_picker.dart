@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' show get;
-import 'package:file_picker/file_picker.dart';
 
 class StreamFilePicker {
   static const TYPE = FileType.CUSTOM;

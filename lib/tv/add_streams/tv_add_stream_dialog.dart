@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:fastotv_common/tv/key_code.dart';
-
 import 'package:fastotvlite/base/add_streams/add_stream_dialog.dart';
 import 'package:fastotvlite/base/login/textfields.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FilePickerDialogTV extends BaseFilePickerDialog {
   final PickStreamFrom source;

@@ -1,15 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:fastotv_common/colors.dart';
-
-import 'package:fastotvlite/service_locator.dart';
 import 'package:fastotv_common/tv/key_code.dart';
-import 'package:fastotvlite/shared_prefs.dart';
-import 'package:fastotvlite/tv/settings/tv_settings_page.dart';
 import 'package:fastotvlite/base/login/textfields.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/shared_prefs.dart';
+import 'package:fastotvlite/tv/settings/tv_settings_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AgePickerTV extends StatefulWidget {
   final FocusNode focus;

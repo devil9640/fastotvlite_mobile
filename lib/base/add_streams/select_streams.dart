@@ -1,17 +1,15 @@
-import 'package:flutter/material.dart';
-
-import 'package:fastotvlite/localization/app_localizations.dart';
-import 'package:fastotv_common/base/controls/preview_icon.dart';
-import 'package:fastotv_common/base/vods/vod_card.dart';
-import 'package:fastotv_common/runtime_device.dart';
 import 'package:fastotv_common/colors.dart';
-
+import 'package:fastotv_common/runtime_device.dart';
 import 'package:fastotvlite/base/add_streams/m3u_to_channels.dart';
 import 'package:fastotvlite/base/vods/vod_card_favorite_pos.dart';
 import 'package:fastotvlite/base/vods/vod_cards_page.dart';
 import 'package:fastotvlite/channels/live_stream.dart';
 import 'package:fastotvlite/channels/vod_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/service_locator.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/preview_icon.dart';
+import 'package:flutter_fastotv_common/base/vods/vod_card.dart';
 
 abstract class BaseSelectStreamPage<T extends StatefulWidget> extends State<T> {
   List<bool> checkValues = [];

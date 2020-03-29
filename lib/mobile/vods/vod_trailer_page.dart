@@ -1,15 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-
-import 'package:fastotv_common/chromecast/chromecast_info.dart';
-import 'package:fastotv_common/chromecast/chromecast_filler.dart';
-import 'package:fastotv_common/screen_orientation.dart' as orientation;
-import 'package:fastotv_common/base/controls/custom_appbar.dart';
 import 'package:fastotv_common/base/controls/player_buttons.dart';
-
-import 'package:fastotvlite/player/vod_player.dart';
-import 'package:fastotvlite/player/common_player.dart';
+import 'package:fastotv_common/screen_orientation.dart' as orientation;
 import 'package:fastotvlite/base/streams/live_bottom_controls.dart';
+import 'package:fastotvlite/player/common_player.dart';
+import 'package:fastotvlite/player/vod_player.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/custom_appbar.dart';
+import 'package:flutter_fastotv_common/chromecast/chromecast_filler.dart';
+import 'package:flutter_fastotv_common/chromecast/chromecast_info.dart';
+import 'package:video_player/video_player.dart';
 
 class VodTrailer extends StatefulWidget {
   final String title;

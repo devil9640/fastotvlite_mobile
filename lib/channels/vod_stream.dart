@@ -1,7 +1,6 @@
 import 'package:fastotv_dart/commands_info/movie_info.dart';
 import 'package:fastotv_dart/commands_info/stream_base_info.dart';
 import 'package:fastotv_dart/commands_info/vod_info.dart';
-
 import 'package:fastotvlite/channels/istream.dart';
 
 class VodStream extends IStream {

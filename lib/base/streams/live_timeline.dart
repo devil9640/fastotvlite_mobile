@@ -1,9 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_dart/commands_info/programme_info.dart';
 import 'package:fastotv_common/colors.dart';
+import 'package:fastotv_dart/commands_info/programme_info.dart';
+import 'package:flutter/material.dart';
 
 class LiveTimeLine extends StatefulWidget {
   final ProgrammeInfo programmeInfo;

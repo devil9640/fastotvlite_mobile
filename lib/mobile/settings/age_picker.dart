@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:numberpicker/numberpicker.dart';
-
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/theming.dart';
-
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotvlite/shared_prefs.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
 import 'package:fastotvlite/mobile/settings/settings_page.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/shared_prefs.dart';
+import 'package:flutter/material.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 class AgeSettingsTile extends StatefulWidget {
   @override

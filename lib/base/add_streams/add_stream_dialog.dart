@@ -1,21 +1,19 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/runtime_device.dart';
-
-import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/base/add_streams/m3u_file_picker.dart';
+import 'package:fastotvlite/base/add_streams/m3u_to_channels.dart';
 import 'package:fastotvlite/channels/live_stream.dart';
 import 'package:fastotvlite/channels/vod_stream.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:fastotvlite/localization/translations.dart';
 import 'package:fastotvlite/mobile/add_streams/select_stream_page.dart';
 import 'package:fastotvlite/mobile/streams/live_edit_channel.dart';
 import 'package:fastotvlite/mobile/vods/vod_edit_channel.dart';
-import 'package:fastotvlite/base/add_streams/m3u_to_channels.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/tv/add_streams/tv_select_stream_page.dart';
 import 'package:fastotvlite/tv/streams/tv_live_edit_channel.dart';
 import 'package:fastotvlite/tv/vods/tv_vod_edit_channel.dart';
-import 'package:fastotvlite/tv/add_streams/tv_select_stream_page.dart';
-import 'package:fastotvlite/base/add_streams/m3u_file_picker.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-import 'package:fastotvlite/localization/translations.dart';
+import 'package:flutter/material.dart';
 
 enum PickStreamFrom { PLAYLIST, SINGLE_STREAM }
 

@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:fastotvlite/base/login/textfields.dart';
+import 'package:flutter/material.dart';
 
 const double BUTTON_HEIGHT = 48;
 

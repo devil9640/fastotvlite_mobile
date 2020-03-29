@@ -1,14 +1,12 @@
-import 'package:persist_theme/persist_theme.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/theming.dart';
-
-import 'package:fastotvlite/pages/debug_page.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/pages/debug_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:persist_theme/persist_theme.dart';
+import 'package:provider/provider.dart';
 
 class AboutPage extends StatefulWidget {
   final String login;

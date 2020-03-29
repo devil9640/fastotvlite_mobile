@@ -1,10 +1,8 @@
-import 'package:get_it/get_it.dart';
-
 import 'package:fastotv_common/package_manager.dart';
 import 'package:fastotv_common/runtime_device.dart';
-
-import 'package:fastotvlite/shared_prefs.dart';
 import 'package:fastotvlite/events/stream_list_events.dart';
+import 'package:fastotvlite/shared_prefs.dart';
+import 'package:get_it/get_it.dart';
 
 // https://www.filledstacks.com/snippet/shared-preferences-service-in-flutter-for-code-maintainability/
 

@@ -1,30 +1,28 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:unicorndial/unicorndial.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
-
-import 'package:fastotv_common/chromecast/chromecast_info.dart';
-import 'package:fastotv_common/colors.dart';
 import 'package:fastotv_common/base/controls/logo.dart';
-
-import 'package:fastotvlite/mobile/settings/settings_page.dart';
-import 'package:fastotvlite/mobile/add_streams/add_stream_dialog.dart';
-import 'package:fastotvlite/service_locator.dart';
-import 'package:fastotvlite/shared_prefs.dart';
-import 'package:fastotvlite/mobile/streams/live_tab.dart';
-import 'package:fastotvlite/mobile/vods/vod_tab.dart';
-import 'package:fastotvlite/channels/vod_stream.dart';
-import 'package:fastotvlite/channels/live_stream.dart';
-import 'package:fastotvlite/channels/istream.dart';
+import 'package:fastotv_common/colors.dart';
 import 'package:fastotvlite/base/add_streams/add_stream_dialog.dart';
 import 'package:fastotvlite/base/add_streams/m3u_to_channels.dart';
-import 'package:fastotvlite/events/stream_list_events.dart';
-import 'package:fastotvlite/events/descending.dart';
-import 'package:fastotvlite/events/ascending.dart';
+import 'package:fastotvlite/channels/istream.dart';
+import 'package:fastotvlite/channels/live_stream.dart';
+import 'package:fastotvlite/channels/vod_stream.dart';
 import 'package:fastotvlite/constants.dart';
+import 'package:fastotvlite/events/ascending.dart';
+import 'package:fastotvlite/events/descending.dart';
+import 'package:fastotvlite/events/stream_list_events.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/mobile/add_streams/add_stream_dialog.dart';
+import 'package:fastotvlite/mobile/settings/settings_page.dart';
+import 'package:fastotvlite/mobile/streams/live_tab.dart';
+import 'package:fastotvlite/mobile/vods/vod_tab.dart';
+import 'package:fastotvlite/service_locator.dart';
+import 'package:fastotvlite/shared_prefs.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/chromecast/chromecast_info.dart';
+import 'package:unicorndial/unicorndial.dart';
 
 class HomePage extends StatefulWidget {
   final List<LiveStream> channels;

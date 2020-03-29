@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_common/base/controls/preview_icon.dart';
-
 import 'package:fastotvlite/channels/vod_stream.dart';
-import 'package:fastotvlite/mobile/add_streams/edit_channel_page.dart';
 import 'package:fastotvlite/localization/app_localizations.dart';
 import 'package:fastotvlite/localization/translations.dart';
+import 'package:fastotvlite/mobile/add_streams/edit_channel_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fastotv_common/base/controls/preview_icon.dart';
 
 abstract class _AbstractVodEditPage extends StatefulWidget {
   final VodStream stream;

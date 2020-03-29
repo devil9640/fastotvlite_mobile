@@ -1,15 +1,12 @@
 import 'dart:core';
 
-import 'package:flutter/material.dart';
-
-import 'package:fastotv_dart/commands_info/programme_info.dart';
-
 import 'package:fastotv_common/colors.dart';
-import 'package:fastotvlite/localization/app_localizations.dart';
-
-import 'package:fastotvlite/base/streams/program_bloc.dart';
+import 'package:fastotv_dart/commands_info/programme_info.dart';
 import 'package:fastotvlite/base/streams/live_timeline.dart';
+import 'package:fastotvlite/base/streams/program_bloc.dart';
 import 'package:fastotvlite/base/streams/program_time.dart';
+import 'package:fastotvlite/localization/app_localizations.dart';
+import 'package:flutter/material.dart';
 
 const double INTERFACE_OPACITY = 0.5;
 const double TIMELINE_HEIGHT = 6.0;
