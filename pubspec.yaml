@@ -38,7 +38,7 @@ dependencies:
   file_picker: ^1.4.3+2
   persist_theme:
     git:
-      url: git://github.com/fastogt/plugins.git
+      url: https://github.com/fastogt/plugins.git
       ref: master
       path: packages/persist_theme
   event_bus: ^1.1.1
